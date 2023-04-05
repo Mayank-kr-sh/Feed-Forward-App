@@ -71,7 +71,7 @@ class _SignUpState extends State<SignUp> {
     });
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (ctx) => const HomePage(),
+        builder: (ctx) => HomePage(),
       ),
     );
     setState(() {
@@ -135,6 +135,108 @@ class _SignUpState extends State<SignUp> {
     }
   }
 
+  Widget _topSection() {
+    return Container(
+      width: double.infinity,
+      height: 350,
+      padding: const EdgeInsets.all(20.0),
+      decoration: const BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromARGB(120, 0, 0, 0),
+            blurRadius: 20,
+          ),
+        ],
+        borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(190),
+          bottomLeft: Radius.circular(190),
+        ),
+        image: DecorationImage(
+          image: NetworkImage(
+              'https://img.freepik.com/premium-vector/food-donation-box-2d-vector-isolated-illustration-grocery-products-give-away-non-profit-humanitarian-aid-flat-composition-cartoon-background-charity-contribution-colourful-scene_151150-6593.jpg?w=2000'),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _textForm() {
+    return Container(
+      height: 400,
+      width: 370,
+      //color: Colors.blue,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          MyTextEmail(controller: fullname, hint: 'Enter Full Name'),
+          MyTextEmail(controller: email, hint: 'Enter Email'),
+          MyTextEmail(controller: phone, hint: 'Enter Phone Number'),
+          MyTextPass(password, 'Enter Password'),
+          MyTextPass(repassword, 'Rewrite password'),
+        ],
+      ),
+    );
+  }
+
+  Widget _button() {
+    return isloding == false
+        ? MyButton(
+            name: 'SignUp',
+            onpress: () {
+              vaildation(context);
+            },
+          )
+        : const Center(
+            child: CircularProgressIndicator(),
+          );
+  }
+
+  Widget _haveAccount() {
+    return HaveAccount(
+      question: 'Already have an Account? ',
+      sub: 'Login',
+      ontap: () {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (ctx) => const Login(),
+          ),
+        );
+      },
+    );
+  }
+
+  // Widget _haveAccountTemp() {
+  //   return Row(
+  //     mainAxisAlignment: MainAxisAlignment.center,
+  //     children: [
+  //       const Text(
+  //         'Already have an Account? ',
+  //         style: TextStyle(
+  //           color: Colors.black,
+  //           fontSize: 18,
+  //         ),
+  //       ),
+  //       GestureDetector(
+  //         onTap: () {
+  //           Navigator.of(context).pushReplacement(
+  //             MaterialPageRoute(
+  //               builder: (ctx) => const Login(),
+  //             ),
+  //           );
+  //         },
+  //         child: const Text(
+  //           'Login',
+  //           style: TextStyle(
+  //             fontWeight: FontWeight.bold,
+  //             fontSize: 20,
+  //             color: Colors.green,
+  //           ),
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -145,104 +247,14 @@ class _SignUpState extends State<SignUp> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                width: double.infinity,
-                height: 350,
-                padding: const EdgeInsets.all(20.0),
-                decoration: const BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.fromARGB(120, 0, 0, 0),
-                      blurRadius: 20,
-                    ),
-                  ],
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(190),
-                    bottomLeft: Radius.circular(190),
-                  ),
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        'https://img.freepik.com/premium-vector/food-donation-box-2d-vector-isolated-illustration-grocery-products-give-away-non-profit-humanitarian-aid-flat-composition-cartoon-background-charity-contribution-colourful-scene_151150-6593.jpg?w=2000'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              _topSection(),
               const SizedBox(height: 15),
-              Center(
-                child: Container(
-                  height: 400,
-                  width: 370,
-                  //color: Colors.blue,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      MyTextEmail(
-                          controller: fullname, hint: 'Enter Full Name'),
-                      MyTextEmail(controller: email, hint: 'Enter Email'),
-                      MyTextEmail(
-                          controller: phone, hint: 'Enter Phone Number'),
-                      MyTextPass(password, 'Enter Password'),
-                      MyTextPass(repassword, 'Rewrite password'),
-                    ],
-                  ),
-                ),
-                /** Button*/
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              isloding == false
-                  ? MyButton(
-                      name: 'SignUp',
-                      onpress: () {
-                        vaildation(context);
-                      },
-                    )
-                  : const Center(
-                      child: CircularProgressIndicator(),
-                    ),
+              _textForm(),
               const SizedBox(height: 10),
-              HaveAccount(
-                question: 'Already have an Account? ',
-                sub: 'Login',
-                ontap: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (ctx) => const Login(),
-                    ),
-                  );
-                },
-              )
-
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     const Text(
-              //       'Already have an Account? ',
-              //       style: TextStyle(
-              //         color: Colors.black,
-              //         fontSize: 18,
-              //       ),
-              //     ),
-              //     GestureDetector(
-              //       onTap: () {
-              //         Navigator.of(context).pushReplacement(
-              //           MaterialPageRoute(
-              //             builder: (ctx) => const Login(),
-              //           ),
-              //         );
-              //       },
-              //       child: const Text(
-              //         'Login',
-              //         style: TextStyle(
-              //           fontWeight: FontWeight.bold,
-              //           fontSize: 20,
-              //           color: Colors.green,
-              //         ),
-              //       ),
-              //     ),
-              //   ],
-              // ),
+              _button(),
+              const SizedBox(height: 10),
+              _haveAccount(),
+              //_haveAccountTemp(),
             ],
           ),
         ),

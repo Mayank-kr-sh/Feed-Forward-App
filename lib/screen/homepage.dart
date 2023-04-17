@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:food_donation/screen/about.dart';
 import 'package:food_donation/screen/contact.dart';
+import 'package:food_donation/screen/location.dart';
 import 'package:food_donation/screen/login.dart';
+import 'package:food_donation/screen/payment.dart';
+import 'package:food_donation/screen/profile.dart';
+import 'package:food_donation/screen/profile1.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -258,7 +262,7 @@ class _HomePageState extends State<HomePage> {
   Widget _navBar() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      height: 45,
+      height: 48,
       // color: Colors.red,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -270,8 +274,8 @@ class _HomePageState extends State<HomePage> {
               },
               icon: const Icon(
                 Icons.sort,
-                size: 30,
-                color: Colors.white,
+                size: 28,
+                color: Color.fromARGB(230, 0, 0, 0),
               ),
             ),
           ),
@@ -280,12 +284,16 @@ class _HomePageState extends State<HomePage> {
               Container(
                 child: IconButton(
                   onPressed: () {
-                    FirebaseAuth.instance.signOut();
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (ctx) => const Location(),
+                      ),
+                    );
                   },
                   icon: const Icon(
                     Icons.location_on,
-                    size: 30,
-                    color: Colors.white,
+                    size: 28,
+                    color: Color.fromARGB(230, 0, 0, 0),
                   ),
                 ),
               ),
@@ -296,8 +304,8 @@ class _HomePageState extends State<HomePage> {
                   },
                   icon: const Icon(
                     Icons.notifications,
-                    size: 30,
-                    color: Colors.white,
+                    size: 28,
+                    color: Color.fromARGB(230, 0, 0, 0),
                   ),
                 ),
               ),
@@ -316,6 +324,7 @@ class _HomePageState extends State<HomePage> {
           end: Alignment.bottomLeft,
           colors: [
             Color.fromARGB(255, 33, 115, 36),
+            Color.fromARGB(255, 114, 243, 118),
             Color.fromARGB(255, 92, 225, 97),
           ],
         ),
@@ -492,6 +501,7 @@ class _HomePageState extends State<HomePage> {
                 end: Alignment.bottomLeft,
                 colors: [
                   Color.fromARGB(255, 33, 115, 36),
+                  Color.fromARGB(255, 114, 243, 118),
                   Color.fromARGB(255, 92, 225, 97),
                 ],
               ),
@@ -634,7 +644,7 @@ class _HomePageState extends State<HomePage> {
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (ctx) => const Contact(),
+                  builder: (ctx) => const MyProfile(),
                 ),
               );
             },
@@ -676,7 +686,7 @@ class _HomePageState extends State<HomePage> {
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (ctx) => const Contact(),
+                  builder: (ctx) => const Payment(),
                 ),
               );
             },

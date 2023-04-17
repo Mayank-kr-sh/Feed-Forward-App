@@ -1,7 +1,8 @@
-//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:food_donation/provider/User_data.dart';
 import 'package:food_donation/screen/components/haveacc.dart';
 import 'package:food_donation/screen/components/my_button.dart';
 import 'package:food_donation/screen/components/text_form_email.dart';
@@ -9,6 +10,9 @@ import 'package:food_donation/screen/components/text_form_pss.dart';
 import 'package:food_donation/screen/components/title.dart';
 import 'package:food_donation/screen/homepage.dart';
 import 'package:food_donation/screen/signup.dart';
+// import 'package:provider/provider.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -18,6 +22,39 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  late UserProvider userProvider;
+  Future<User?> _googleSignUp() async {
+    try {
+      final GoogleSignIn _googleSignIn = GoogleSignIn(
+        scopes: ['email'],
+      );
+      final FirebaseAuth _auth = FirebaseAuth.instance;
+
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
+      final User? user = (await _auth.signInWithCredential(credential)).user;
+      // print("signed in " + user.displayName);
+      userProvider.addUserData(
+        currentUser: user,
+        userEmail: user?.email,
+        userImage: user?.photoURL,
+        userName: user?.displayName,
+      );
+
+      return user;
+    } catch (e) {
+      //print(e.message);
+    }
+  }
+
+  //********************************************** */
   final TextEditingController email = TextEditingController();
 
   GlobalKey<ScaffoldMessengerState> scaffold =
@@ -107,10 +144,32 @@ class _LoginState extends State<Login> {
 
   final TextEditingController password = TextEditingController();
 
+  Widget _otherOption() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SignInButton(Buttons.Google, text: "Login With Google",
+            onPressed: () async {
+          await _googleSignUp()
+              .then((value) => Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  ));
+        }),
+        SignInButton(
+          Buttons.Facebook,
+          text: "Login With Facebook",
+          onPressed: () {},
+        ),
+      ],
+    );
+  }
+
   Widget _topSection() {
     return Container(
       width: double.infinity,
-      height: 530,
+      height: 450,
       padding: const EdgeInsets.all(20.0),
       decoration: const BoxDecoration(
         boxShadow: [
@@ -189,6 +248,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    // userProvider = Provider.of<UserProvider>(context);
+    //************************* */
     return Scaffold(
       key: scaffold,
       backgroundColor: const Color.fromARGB(255, 239, 234, 209),
@@ -200,7 +261,7 @@ class _LoginState extends State<Login> {
               _topSection(),
               Container(
                 width: double.infinity,
-                height: 300,
+                //height: 300,
                 padding: const EdgeInsets.all(20.0),
                 decoration: const BoxDecoration(),
                 child: Column(
@@ -208,6 +269,8 @@ class _LoginState extends State<Login> {
                     _buildAllTextForm(),
                     _buildButton(),
                     const SizedBox(height: 20),
+                    _otherOption(),
+                    const SizedBox(height: 15),
                     _haveaccount(),
                   ],
                 ),

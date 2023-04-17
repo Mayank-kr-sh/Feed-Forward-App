@@ -21,6 +21,18 @@ class CloudFirestoreClass {
         .set(user.getJson());
   }
 
+  // Future uploadNameAndAddressToDatabase(
+  //     {required String name, required String phone}) async {
+  //   await firebaseFirestore
+  //       .collection("users")
+  //       .doc(firebaseAuth.currentUser!.uid)
+  //       .set({
+  //     "name": name,
+  //     "phone": phone,
+  //   });
+  //   //.set(user.getJson());
+  // }
+
   Future getNameAndAddress() async {
     DocumentSnapshot snap = await firebaseFirestore
         .collection("users")

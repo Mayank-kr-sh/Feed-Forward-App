@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:food_donation/resourses/cloudfirestore.dart';
 import 'package:food_donation/user_Details/user_details.dart';
@@ -9,21 +9,21 @@ class AuthenticationMethods {
 
   Future<String> signUpUser(
       {required String name,
-      required String address,
+      required String phone,
       required String email,
       required String password}) async {
     name.trim();
-    address.trim();
+    phone.trim();
     email.trim();
     password.trim();
     String output = "Something went wrong";
-    if (name != "" && address != "" && email != "" && password != "") {
+    if (name != "" && phone != "" && email != "" && password != "") {
       try {
         await firebaseAuth.createUserWithEmailAndPassword(
           email: email,
           password: password,
         );
-        UserDetailsModel user = UserDetailsModel(name: name, address: address);
+        UserDetailsModel user = UserDetailsModel(name: name, phone: phone);
         await cloudFirestoreClass.uploadNameAndAddressToDatabase(user: user);
         output = "success";
       } on FirebaseAuthException catch (e) {

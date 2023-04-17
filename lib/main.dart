@@ -75,31 +75,32 @@ class MyApp extends StatelessWidget {
     //   ),
     // );
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => UserDetailsProvider())
-        ],
-        child: MaterialApp(
-          title: "Amazon Clone",
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData.light().copyWith(
-            scaffoldBackgroundColor: Colors.white,
-          ),
-          home: StreamBuilder(
-              stream: FirebaseAuth.instance.authStateChanges(),
-              builder: (context, AsyncSnapshot<User?> user) {
-                if (user.connectionState == ConnectionState.waiting) {
-                  return const Center(
-                    child: CircularProgressIndicator(
-                      color: Colors.orange,
-                    ),
-                  );
-                } else if (user.hasData) {
-                  return const ScreenLayout();
-                  //return const SellScreen();
-                } else {
-                  return const SignInScreen();
-                }
-              }),
-        ));
+      providers: [ChangeNotifierProvider(create: (_) => UserDetailsProvider())],
+      child: MaterialApp(
+        title: "Amazon Clone",
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.light().copyWith(
+          scaffoldBackgroundColor: Colors.white,
+        ),
+        home: StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, AsyncSnapshot<User?> user) {
+            if (user.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.orange,
+                ),
+              );
+            } else if (user.hasData) {
+              //return Text("Sign In");
+              return const ScreenLayout();
+              //return const SellScreen();
+            } else {
+              return const SignInScreen();
+            }
+          },
+        ),
+      ),
+    );
   }
 }

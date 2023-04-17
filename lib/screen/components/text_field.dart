@@ -46,7 +46,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 15),
+          padding: const EdgeInsets.only(bottom: 15, left: 15),
           child: Text(
             widget.title,
             style: const TextStyle(
@@ -59,17 +59,19 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
           decoration: BoxDecoration(boxShadow: [
             isInFocus
                 ? BoxShadow(
-                    color: Colors.orange.withOpacity(0.4),
+                    color:
+                        const Color.fromARGB(255, 0, 26, 255).withOpacity(0.4),
                     blurRadius: 8,
                     spreadRadius: 2,
                   )
                 : BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
+                    color:
+                        const Color.fromARGB(255, 61, 61, 61).withOpacity(0.2),
                     blurRadius: 8,
                     spreadRadius: 2,
                   )
           ]),
-          child: TextField(
+          child: TextFormField(
             focusNode: focusNode,
             obscureText: widget.obscureText,
             controller: widget.controller,
@@ -79,18 +81,14 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
               filled: true,
               hintText: widget.hintText,
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(3),
-                borderSide: const BorderSide(
-                  color: Colors.grey,
-                  width: 1,
-                ),
-              ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.orange,
-                  width: 1,
-                ),
-              ),
+                  borderRadius: BorderRadius.circular(50),
+                  borderSide: BorderSide.none),
+              // focusedBorder: const OutlineInputBorder(
+              //   borderSide: BorderSide(
+              //     color: Color.fromARGB(255, 81, 0, 255),
+              //     width: 1,
+              //   ),
+              // ),
             ),
           ),
         )

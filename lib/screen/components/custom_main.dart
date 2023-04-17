@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_donation/utils/utils.dart';
 
 class CustomMainButton extends StatelessWidget {
   final Widget child;
@@ -16,9 +15,12 @@ class CustomMainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size screenSize = Utils().getScreenSize();
+    Size screenSize = MediaQuery.of(context).size;
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
           primary: color,
           fixedSize: Size(
             screenSize.width * 0.5,

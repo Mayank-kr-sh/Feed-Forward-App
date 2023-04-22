@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food_donation/screen/components/haveacc.dart';
+// import 'package:food_donation/screen/components/haveacc.dart';
 import 'package:food_donation/screen/components/my_button.dart';
 import 'package:food_donation/screen/components/text_form_email.dart';
 import 'package:food_donation/screen/components/text_form_pss.dart';
@@ -191,19 +191,19 @@ class _SignUpState extends State<SignUp> {
           );
   }
 
-  Widget _haveAccount() {
-    return HaveAccount(
-      question: 'Already have an Account? ',
-      sub: 'Login',
-      ontap: () {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-            builder: (ctx) => const Login(),
-          ),
-        );
-      },
-    );
-  }
+  // Widget _haveAccount() {
+  //   return HaveAccount(
+  //     question: 'Already have an Account? ',
+  //     sub: 'Login',
+  //     ontap: () {
+  //       Navigator.of(context).pushReplacement(
+  //         MaterialPageRoute(
+  //           builder: (ctx) => const Login(),
+  //         ),
+  //       );
+  //     },
+  //   );
+  // }
 
   // Widget _haveAccountTemp() {
   //   return Row(
@@ -253,7 +253,7 @@ class _SignUpState extends State<SignUp> {
               const SizedBox(height: 10),
               _button(),
               const SizedBox(height: 10),
-              _haveAccount(),
+              //_haveAccount(),
               //_haveAccountTemp(),
             ],
           ),

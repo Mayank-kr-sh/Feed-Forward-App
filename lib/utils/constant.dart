@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:food_donation/category/About.dart';
+import 'package:food_donation/category/dummy.dart';
+import 'package:food_donation/category/dumy.dart';
+import 'package:food_donation/category/money_donation.dart';
+import 'package:food_donation/category/profile.dart';
 import 'package:food_donation/screen/components/simple_product.dart';
+import 'package:food_donation/screen/homepage.dart';
+import 'package:food_donation/screen/location.dart';
+import 'package:food_donation/screen/teams/mayank.dart';
 import 'package:food_donation/screen1/account_screen.dart';
 import 'package:food_donation/screen1/cart_screen.dart';
 import 'package:food_donation/screen1/home_screen.dart';
 import 'package:food_donation/screen1/more_screen.dart';
+import 'package:food_donation/screen1/sell_screen.dart';
 import 'package:food_donation/user_Details/product.dart';
 
 // const double kAppBarHeight = 80;
@@ -14,40 +23,29 @@ const List<Widget> screens = [
   MoreScreen(),
 ];
 
-const String amazonLogoUrl =
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Amazon_icon.svg/2500px-Amazon_icon.svg.png";
-
 const List<String> categoriesList = [
-  "Prime",
-  "Mobiles",
-  "Fashion",
-  "Electronics",
   "Home",
-  "Fresh",
-  "Appliances",
-  "Books, Toys",
-  "Essential"
+  "Food Donation",
+  "Money Donation",
+  "Chat Us",
+  "Location",
+  "NGO's",
+  "Profile",
+  "About Us",
+  "More"
 ];
 
 const List<String> categoryLogos = [
-  "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png",
-  "https://m.media-amazon.com/images/I/116KbsvwCRL._SX90_SY90_.png",
-  "https://m.media-amazon.com/images/I/115yueUc1aL._SX90_SY90_.png",
-  "https://m.media-amazon.com/images/I/11qyfRJvEbL._SX90_SY90_.png",
-  "https://m.media-amazon.com/images/I/11BIyKooluL._SX90_SY90_.png",
-  "https://m.media-amazon.com/images/I/11CR97WoieL._SX90_SY90_.png",
-  "https://m.media-amazon.com/images/I/01cPTp7SLWL._SX90_SY90_.png",
-  "https://m.media-amazon.com/images/I/11yLyO9f9ZL._SX90_SY90_.png",
-  "https://m.media-amazon.com/images/I/11M0jYc-tRL._SX90_SY90_.png",
+  "https://i.pinimg.com/originals/53/fd/2d/53fd2db5cac9a59cfa336997c09f1b97.jpg",
+  "https://thumbs.dreamstime.com/b/ food-donation-pixel-perfect-rgb-color-icon-dark-theme-hunger-relief-organization-rescue-program-simple-filled-line-drawing-241577184.jpg",
+  "https://img.freepik.com/free-vector/letter-e-modern-payment-logo-gradient-colorful_487879-1036.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwwmcKoujslItm_puqarDitoDSuusm4XeEqvjTs0BTVA&ec=48665701",
+  "https://cdn.dribbble.com/users/4220912/screenshots/18040866/media/4997999ac8c4e88dad77cc142491e052.png?compress=1&resize=400x300",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRbTVrJwalKHJADPEZ5YqheYeKMhCGugkzYU0dPYn9hw&ec=48665701",
+  "https://thumbs.dreamstime.com/b/user-icon-glyph-gray-background-106603565.jpg",
+  "https://pmtips.net/Portals/0/EasyDNNnews/2084/img-7-project-management-tips-on-how-to-motivate-your-team1.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-x6LPruFIioTH5sCo3JHhqfSyGmL3ChmN5f6URuNNp_3m_OnHLkTo2XKbCSOcfs9-rtaQ3BCMeps&ec=48665701",
 ];
-
-// const List<String> largeAds = [
-//   "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg",
-//   "https://m.media-amazon.com/images/I/61jmYNrfVoL._SX3000_.jpg",
-//   "https://m.media-amazon.com/images/I/612a5cTzBiL._SX3000_.jpg",
-//   "https://m.media-amazon.com/images/I/61fiSvze0eL._SX3000_.jpg",
-//   "https://m.media-amazon.com/images/I/61PzxXMH-0L._SX3000_.jpg",
-// ];
 
 List<String> smallAds = [
   "https://r1imghtlak.mmtcdn.com/082f1ae6330211eb9c050242ac110004.jpg?&output-quality=75&downsize=583:388&output-format=jpg",
@@ -62,10 +60,6 @@ const List<String> adItemNames = [
   "Public Events",
   "Merriages",
 ];
-
-//Dont even attemp to scroll to the end of this manually lmao
-const String amazonLogo =
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png";
 
 List<Widget> testChildren = [
   SimpleProductWidget(
@@ -134,20 +128,21 @@ List<Widget> testChildren = [
         noOfRating: 1),
   )
 ];
-// List<Widget> textChildern = [
-//   const SimpleProductWidget(
-//       url: "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg"),
-//   const SimpleProductWidget(
-//       url: "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png"),
-//   const SimpleProductWidget(
-//       url: "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg"),
-//   const SimpleProductWidget(
-//       url: "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png"),
-//   const SimpleProductWidget(
-//       url: "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg"),
-//   const SimpleProductWidget(
-//       url: "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png"),
-// ];
+
+List<Widget> productsList = [
+  HomePage(),
+  //const HomeScreen(),
+  //const HomeScreen(),
+  const SellScreen(),
+  const Payment(),
+  DonationPag(),
+  DonationPage(),
+  const Location(),
+  const Mayank(),
+  const MyProfile(),
+  const About(),
+  const MoreScreen(),
+];
 
 List<String> keysOfRating = [
   "Very bad",

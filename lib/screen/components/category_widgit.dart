@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_donation/screen1/result_screen.dart';
 import 'package:food_donation/utils/constant.dart';
 
 class CategoryWidget extends StatelessWidget {
@@ -13,9 +12,7 @@ class CategoryWidget extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ResultsScreen(
-              query: categoriesList[index],
-            ),
+            builder: (context) => productsList[index],
           ),
         );
       },

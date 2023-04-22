@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:food_donation/provider/user_details_provider.dart';
+import 'package:food_donation/resourses/cloudfirestore.dart';
 import 'package:food_donation/screen/components/cost_item.dart';
 import 'package:food_donation/screen/components/custom_main.dart';
 import 'package:food_donation/screen/components/custome_simple_rounded.dart';
@@ -93,18 +95,17 @@ class _ProductScreenState extends State<ProductScreen> {
                           CustomMainButton(
                             color: Colors.orange,
                             isLoading: false,
-                            // onPressed: () async {
-                            //   await CloudFirestoreClass().addProductToOrders(
-                            //       model: widget.productModel,
-                            //       userDetails:
-                            //           Provider.of<UserDetailsProvider>(
-                            //                   context,
-                            //                   listen: false)
-                            //               .userDetails);
-                            //   Utils().showSnackBar(
-                            //       context: context, content: "Done");
-                            // },
-                            onPressed: () {},
+                            onPressed: () async {
+                              await CloudFirestoreClass().addProductToOrders(
+                                  model: widget.productModel,
+                                  userDetails: Provider.of<UserDetailsProvider>(
+                                          context,
+                                          listen: false)
+                                      .userDetails);
+                              Utils().showSnackBar(
+                                  context: context, content: "Done");
+                            },
+                            //onPressed: () {},
                             child: const Text(
                               "Buy Now",
                               style: TextStyle(color: Colors.black),
@@ -114,14 +115,13 @@ class _ProductScreenState extends State<ProductScreen> {
                           CustomMainButton(
                             color: Colors.yellow,
                             isLoading: false,
-                            // onPressed: () async {
-                            //   await CloudFirestoreClass().addProductToCart(
-                            //       productModel: widget.productModel);
-                            //   Utils().showSnackBar(
-                            //       context: context,
-                            //       content: "Added to cart.");
-                            // },
-                            onPressed: () {},
+                            onPressed: () async {
+                              await CloudFirestoreClass().addProductToCart(
+                                  productModel: widget.productModel);
+                              Utils().showSnackBar(
+                                  context: context, content: "Added to cart.");
+                            },
+                            //onPressed: () {},
                             child: const Text(
                               "Add to cart",
                               style: TextStyle(color: Colors.black),
@@ -141,47 +141,34 @@ class _ProductScreenState extends State<ProductScreen> {
                         ],
                       ),
                     ),
-                    // SizedBox(
-                    //   height: screenSize.height,
-                    //   child: ListView.builder(
-                    //     itemCount: 10,
-                    //     itemBuilder: (contex, Index) {
-                    //       return const ReviewWidget(
-                    //         review: ReviewModel(
-                    //             senderName: "Mayank",
-                    //             description: "Good",
-                    //             rating: 4),
-                    //       );
-                    //     },
-                    //   ),
-                    // )
                     SizedBox(
-                        height: screenSize.height,
-                        child: StreamBuilder(
-                          stream: FirebaseFirestore.instance
-                              .collection("products")
-                              .doc(widget.productModel.uid)
-                              .collection("reviews")
-                              .snapshots(),
-                          builder: (context,
-                              AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>>
-                                  snapshot) {
-                            if (snapshot.connectionState ==
-                                ConnectionState.waiting) {
-                              return Container();
-                            } else {
-                              return ListView.builder(
-                                  itemCount: snapshot.data!.docs.length,
-                                  itemBuilder: (context, index) {
-                                    ReviewModel model =
-                                        ReviewModel.getModelFromJson(
-                                            json: snapshot.data!.docs[index]
-                                                .data());
-                                    return ReviewWidget(review: model);
-                                  });
-                            }
-                          },
-                        ))
+                      height: screenSize.height,
+                      child: StreamBuilder(
+                        stream: FirebaseFirestore.instance
+                            .collection("products")
+                            .doc(widget.productModel.uid)
+                            .collection("reviews")
+                            .snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>>
+                                snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return Container();
+                          } else {
+                            return ListView.builder(
+                                itemCount: snapshot.data!.docs.length,
+                                itemBuilder: (context, index) {
+                                  ReviewModel model =
+                                      ReviewModel.getModelFromJson(
+                                          json: snapshot.data!.docs[index]
+                                              .data());
+                                  return ReviewWidget(review: model);
+                                });
+                          }
+                        },
+                      ),
+                    )
                   ],
                 ),
               ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_donation/screen1/result_screen.dart';
 import 'package:food_donation/utils/constant.dart';
 
 class CategoriesHorizontalListViewBar extends StatelessWidget {
@@ -21,15 +20,13 @@ class CategoriesHorizontalListViewBar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ResultsScreen(
-                      query: categoriesList[index],
-                    ),
+                    builder: (context) => productsList[index],
                   ),
                 );
               },
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,

@@ -3,7 +3,6 @@ import 'package:food_donation/screen/components/cost_item.dart';
 import 'package:food_donation/screen/components/rating_widget.dart';
 import 'package:food_donation/screen1/product_screen.dart';
 import 'package:food_donation/user_Details/product.dart';
-import 'package:food_donation/utils/utils.dart';
 
 class ResultsWidget extends StatelessWidget {
   final ProductModel product;
@@ -24,57 +23,59 @@ class ResultsWidget extends StatelessWidget {
           ),
         );
       },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: screenSize.width / 3,
-              child: Image.network(
-                product.url,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 5),
-              child: Text(
-                product.productName,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 5),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: screenSize.width / 5,
-                    child: FittedBox(
-                      child: RatingStatWidget(rating: product.rating),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Text(
-                      product.noOfRating.toString(),
-                      style: const TextStyle(
-                        color: Colors.cyan,
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20,
-              child: FittedBox(
-                child: CostWidget(
-                  color: const Color.fromARGB(255, 92, 9, 3),
-                  cost: product.cost,
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: screenSize.width / 3,
+                child: Image.network(
+                  product.url,
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(bottom: 5),
+                child: Text(
+                  product.productName,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 5),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: screenSize.width / 5,
+                      child: FittedBox(
+                        child: RatingStatWidget(rating: product.rating),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        product.noOfRating.toString(),
+                        style: const TextStyle(
+                          color: Colors.cyan,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+                child: FittedBox(
+                  child: CostWidget(
+                    color: Color.fromARGB(255, 214, 35, 22),
+                    cost: product.cost,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

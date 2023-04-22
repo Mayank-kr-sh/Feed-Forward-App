@@ -21,7 +21,8 @@ class _SellScreenState extends State<SellScreen> {
   int selected = 1;
   Uint8List? image;
   TextEditingController nameController = TextEditingController();
-  TextEditingController costController = TextEditingController();
+  TextEditingController locationController = TextEditingController();
+  TextEditingController mssgController = TextEditingController();
   List<int> keysForDiscount = [0, 70, 60, 50];
   //keysofdiscoutn[selected -1]
 
@@ -29,12 +30,12 @@ class _SellScreenState extends State<SellScreen> {
   void dispose() {
     super.dispose();
     nameController.dispose();
-    costController.dispose();
+    locationController.dispose();
+    mssgController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    String dropdownValue = 'Type of food';
     Size screenSize = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
@@ -55,58 +56,80 @@ class _SellScreenState extends State<SellScreen> {
                         Stack(
                           children: [
                             image == null
-                                ? Image.network(
-                                    "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png",
-                                    height: screenSize.height / 10,
+                                ? CircleAvatar(
+                                    radius: 50,
+                                    backgroundColor:
+                                        Color.fromARGB(54, 158, 158, 158),
+                                    child: Image.asset(
+                                      "images/upload.png",
+                                      height: screenSize.height / 3,
+                                    ),
                                   )
                                 : Image.memory(
                                     image!,
-                                    height: screenSize.height / 10,
+                                    height: screenSize.height / 5,
                                   ),
-                            IconButton(
-                                onPressed: () async {
-                                  Uint8List? temp = await Utils().pickImage();
-                                  if (temp != null) {
-                                    setState(() {
-                                      image = temp;
-                                    });
-                                  }
-                                },
-                                icon: Icon(Icons.file_upload))
+                            Positioned.fill(
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: IconButton(
+                                  onPressed: () async {
+                                    Uint8List? temp = await Utils().pickImage();
+                                    if (temp != null) {
+                                      setState(() {
+                                        image = temp;
+                                      });
+                                    }
+                                  },
+                                  icon: const Icon(
+                                    Icons.file_upload_rounded,
+                                    color: Colors.grey,
+                                    size: 10,
+                                  ),
+                                ),
+                              ),
+                            )
                           ],
                         ),
                         Container(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 35, vertical: 10),
-                          height: screenSize.height * 0.6,
+                          height: screenSize.height * 0.7,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             border: Border.all(
                               color: Colors.grey,
                               width: 1,
                             ),
+                            borderRadius: BorderRadius.circular(30),
                           ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               TextFieldWidget(
-                                  title: "Name",
+                                  title: "Food Name",
                                   controller: nameController,
                                   obscureText: false,
                                   hintText: "Enter the name of the item"),
                               TextFieldWidget(
-                                  title: "Cost",
-                                  controller: costController,
+                                  title: "Location",
+                                  controller: locationController,
                                   obscureText: false,
-                                  hintText: "Enter the cost of the item"),
+                                  hintText: "Enter Location to Pick Up Food"),
+                              TextFieldWidget(
+                                  title: "Other Information",
+                                  controller: locationController,
+                                  obscureText: false,
+                                  hintText:
+                                      "Please Mention the quality of food"),
                               const Text(
-                                "Discount",
+                                "Category Of Foods",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 17),
                               ),
                               ListTile(
-                                title: Text("None"),
+                                title: Text("Other Food"),
                                 leading: Radio(
                                   value: 1,
                                   groupValue: selected,
@@ -118,7 +141,7 @@ class _SellScreenState extends State<SellScreen> {
                                 ),
                               ),
                               ListTile(
-                                title: Text("70%"),
+                                title: const Text("Raw Food"),
                                 leading: Radio(
                                   value: 2,
                                   groupValue: selected,
@@ -130,7 +153,7 @@ class _SellScreenState extends State<SellScreen> {
                                 ),
                               ),
                               ListTile(
-                                title: Text("60%"),
+                                title: const Text("Cooked Food"),
                                 leading: Radio(
                                   value: 3,
                                   groupValue: selected,
@@ -142,7 +165,7 @@ class _SellScreenState extends State<SellScreen> {
                                 ),
                               ),
                               ListTile(
-                                title: Text("50%"),
+                                title: const Text("Packed Food"),
                                 leading: Radio(
                                   value: 4,
                                   groupValue: selected,
@@ -153,36 +176,10 @@ class _SellScreenState extends State<SellScreen> {
                                   },
                                 ),
                               ),
-                              // DropdownButton<String>(
-                              //   value: dropdownValue,
-                              //   items: <String>[
-                              //     "Type of food",
-                              //     "Raw",
-                              //     "Cooked",
-                              //     "Packets"
-                              //   ].map<DropdownMenuItem<String>>((String value) {
-                              //     return DropdownMenuItem<String>(
-                              //       value: value,
-                              //       child: Text(
-                              //         value,
-                              //         style: TextStyle(
-                              //             fontSize: 17,
-                              //             color: Colors.grey[600]),
-                              //       ),
-                              //     );
-                              //   }).toList(),
-                              //   onChanged: (String? i) {
-                              //     setState(
-                              //       () {
-                              //         dropdownValue = i!;
-                              //       },
-                              //     );
-                              //   },
-                              // ),
                             ],
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           // color: Colors.amber
                           width: screenSize.width * 0.6,
                           child: Column(
@@ -190,13 +187,12 @@ class _SellScreenState extends State<SellScreen> {
                               CustomMainButton(
                                 color: Colors.yellow,
                                 isLoading: isLoading,
-                                //onPressed: () {},
                                 onPressed: () async {
                                   String output = await CloudFirestoreClass()
                                       .uploadProductToDatabase(
                                           image: image,
                                           productName: nameController.text,
-                                          rawCost: costController.text,
+                                          rawCost: locationController.text,
                                           discount:
                                               keysForDiscount[selected - 1],
                                           sellerName:
@@ -211,7 +207,7 @@ class _SellScreenState extends State<SellScreen> {
                                     // ignore: use_build_context_synchronously
                                     Utils().showSnackBar(
                                         context: context,
-                                        content: "Posted Product");
+                                        content: "Notified Sucessfully");
                                   } else {
                                     // ignore: use_build_context_synchronously
                                     Utils().showSnackBar(
@@ -219,11 +215,11 @@ class _SellScreenState extends State<SellScreen> {
                                   }
                                 },
                                 child: const Text(
-                                  "Sell",
+                                  "Notify To Organization",
                                   style: TextStyle(color: Colors.black),
                                 ),
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               CustomMainButton(
                                 color: Colors.grey[300]!,
                                 isLoading: false,
@@ -231,7 +227,7 @@ class _SellScreenState extends State<SellScreen> {
                                   Navigator.pop(context);
                                 },
                                 child: const Text(
-                                  "Back",
+                                  "Back to Profile",
                                   style: TextStyle(color: Colors.black),
                                 ),
                               )

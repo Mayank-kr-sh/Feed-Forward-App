@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:food_donation/provider/User_data.dart';
-import 'package:food_donation/screen/components/haveacc.dart';
+// import 'package:food_donation/screen/components/haveacc.dart';
 import 'package:food_donation/screen/components/my_button.dart';
 import 'package:food_donation/screen/components/text_form_email.dart';
 import 'package:food_donation/screen/components/text_form_pss.dart';
@@ -232,19 +232,19 @@ class _LoginState extends State<Login> {
           );
   }
 
-  Widget _haveaccount() {
-    return HaveAccount(
-      question: "Don't Have an Account ?",
-      sub: 'SignUp',
-      ontap: () {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-            builder: (ctx) => const SignUp(),
-          ),
-        );
-      },
-    );
-  }
+  // Widget _haveaccount() {
+  //   return HaveAccount(
+  //     question: "Don't Have an Account ?",
+  //     sub: 'SignUp',
+  //     ontap: () {
+  //       Navigator.of(context).pushReplacement(
+  //         MaterialPageRoute(
+  //           builder: (ctx) => const SignUp(),
+  //         ),
+  //       );
+  //     },
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -271,7 +271,7 @@ class _LoginState extends State<Login> {
                     const SizedBox(height: 20),
                     _otherOption(),
                     const SizedBox(height: 15),
-                    _haveaccount(),
+                    // _haveaccount(),
                   ],
                 ),
               ),

@@ -41,7 +41,11 @@ class _ScreenLayoutState extends State<ScreenLayout> {
       length: 4,
       child: SafeArea(
         child: Scaffold(
-          body: PageView(controller: pageController, children: screens),
+          body: PageView(
+            controller: pageController,
+            children: screens,
+            physics: NeverScrollableScrollPhysics(),
+          ),
           bottomNavigationBar: Container(
             //height: 40,
             decoration: BoxDecoration(
@@ -59,6 +63,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                 ),
               ),
               onTap: changePage,
+              // isScrollable: true,
               indicatorSize: TabBarIndicatorSize.label,
               tabs: [
                 Tab(

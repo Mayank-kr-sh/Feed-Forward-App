@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_controller.dart';
+// import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,7 +7,7 @@ import 'package:food_donation/screen/contact.dart';
 import 'package:food_donation/screen/location.dart';
 import 'package:food_donation/screen/login.dart';
 import 'package:food_donation/screen/payment.dart';
-import 'package:food_donation/screen/profile.dart';
+// import 'package:food_donation/screen/profile.dart';
 import 'package:food_donation/screen/profile1.dart';
 
 class HomePage extends StatefulWidget {

@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:food_donation/screen/components/simple_product.dart';
+import 'package:food_donation/user_Details/order_details.dart';
 import 'package:food_donation/user_Details/product.dart';
 import 'package:food_donation/user_Details/review_model.dart';
 import 'package:food_donation/user_Details/user_details.dart';
@@ -125,74 +126,73 @@ class CloudFirestoreClass {
     // await changeAverageRating(productUid: productUid, reviewModel: model);
   }
 
-//   Future addProductToCart({required ProductModel productModel}) async {
-//     await firebaseFirestore
-//         .collection("users")
-//         .doc(firebaseAuth.currentUser!.uid)
-//         .collection("cart")
-//         .doc(productModel.uid)
-//         .set(productModel.getJson());
-//   }
+  Future addProductToCart({required ProductModel productModel}) async {
+    await firebaseFirestore
+        .collection("users")
+        .doc(firebaseAuth.currentUser!.uid)
+        .collection("cart")
+        .doc(productModel.uid)
+        .set(productModel.getJson());
+  }
 
-//   Future deleteProductFromCart({required String uid}) async {
-//     await firebaseFirestore
-//         .collection("users")
-//         .doc(firebaseAuth.currentUser!.uid)
-//         .collection("cart")
-//         .doc(uid)
-//         .delete();
-//   }
+  Future deleteProductFromCart({required String uid}) async {
+    await firebaseFirestore
+        .collection("users")
+        .doc(firebaseAuth.currentUser!.uid)
+        .collection("cart")
+        .doc(uid)
+        .delete();
+  }
 
-//   Future buyAllItemsInCart({required UserDetailsModel userDetails}) async {
-//     QuerySnapshot<Map<String, dynamic>> snapshot = await firebaseFirestore
-//         .collection("users")
-//         .doc(firebaseAuth.currentUser!.uid)
-//         .collection("cart")
-//         .get();
+  Future buyAllItemsInCart({required UserDetailsModel userDetails}) async {
+    QuerySnapshot<Map<String, dynamic>> snapshot = await firebaseFirestore
+        .collection("users")
+        .doc(firebaseAuth.currentUser!.uid)
+        .collection("cart")
+        .get();
 
-//     for (int i = 0; i < snapshot.docs.length; i++) {
-//       ProductModel model =
-//           ProductModel.getModelFromJson(json: snapshot.docs[i].data());
-//       addProductToOrders(model: model, userDetails: userDetails);
-//       await deleteProductFromCart(uid: model.uid);
-//     }
-//   }
+    for (int i = 0; i < snapshot.docs.length; i++) {
+      ProductModel model =
+          ProductModel.getModelFromJson(json: snapshot.docs[i].data());
+      addProductToOrders(model: model, userDetails: userDetails);
+      await deleteProductFromCart(uid: model.uid);
+    }
+  }
 
-//   Future addProductToOrders(
-//       {required ProductModel model,
-//       required UserDetailsModel userDetails}) async {
-//     await firebaseFirestore
-//         .collection("users")
-//         .doc(firebaseAuth.currentUser!.uid)
-//         .collection("orders")
-//         .add(model.getJson());
-//     await sendOrderRequest(model: model, userDetails: userDetails);
-//   }
+  Future addProductToOrders(
+      {required ProductModel model,
+      required UserDetailsModel userDetails}) async {
+    await firebaseFirestore
+        .collection("users")
+        .doc(firebaseAuth.currentUser!.uid)
+        .collection("orders")
+        .add(model.getJson());
+    await sendOrderRequest(model: model, userDetails: userDetails);
+  }
 
-//   Future sendOrderRequest(
-//       {required ProductModel model,
-//       required UserDetailsModel userDetails}) async {
-//     OrderRequestModel orderRequestModel = OrderRequestModel(
-//         orderName: model.productName, buyersAddress: userDetails.address);
-//     await firebaseFirestore
-//         .collection("users")
-//         .doc(model.sellerUid)
-//         .collection("orderRequests")
-//         .add(orderRequestModel.getJson());
-//   }
+  Future sendOrderRequest(
+      {required ProductModel model,
+      required UserDetailsModel userDetails}) async {
+    OrderRequestModel orderRequestModel = OrderRequestModel(
+        orderName: model.productName, buyersAddress: userDetails.phone);
+    await firebaseFirestore
+        .collection("users")
+        .doc(model.sellerUid)
+        .collection("orderRequests")
+        .add(orderRequestModel.getJson());
+  }
 
-//   Future changeAverageRating(
-//       {required String productUid, required ReviewModel reviewModel}) async {
-//     DocumentSnapshot snapshot =
-//         await firebaseFirestore.collection("products").doc(productUid).get();
-//     ProductModel model =
-//         ProductModel.getModelFromJson(json: (snapshot.data() as dynamic));
-//     int currentRating = model.rating;
-//     int newRating = ((currentRating + reviewModel.rating) / 2).toInt();
-//     await firebaseFirestore
-//         .collection("products")
-//         .doc(productUid)
-//         .update({"rating": newRating});
-//   }
-// }
+  Future changeAverageRating(
+      {required String productUid, required ReviewModel reviewModel}) async {
+    DocumentSnapshot snapshot =
+        await firebaseFirestore.collection("products").doc(productUid).get();
+    ProductModel model =
+        ProductModel.getModelFromJson(json: (snapshot.data() as dynamic));
+    int currentRating = model.rating;
+    int newRating = ((currentRating + reviewModel.rating) / 2).toInt();
+    await firebaseFirestore
+        .collection("products")
+        .doc(productUid)
+        .update({"rating": newRating});
+  }
 }

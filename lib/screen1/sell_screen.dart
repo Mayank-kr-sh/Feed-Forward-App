@@ -23,7 +23,7 @@ class _SellScreenState extends State<SellScreen> {
   TextEditingController nameController = TextEditingController();
   TextEditingController locationController = TextEditingController();
   TextEditingController mssgController = TextEditingController();
-  List<int> keysForDiscount = [0, 70, 60, 50];
+  List<int> keysForDiscount = [70, 60, 50];
   //keysofdiscoutn[selected -1]
 
   @override
@@ -50,7 +50,7 @@ class _SellScreenState extends State<SellScreen> {
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                   child: Center(
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      // crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Stack(
@@ -94,7 +94,7 @@ class _SellScreenState extends State<SellScreen> {
                         Container(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 35, vertical: 10),
-                          height: screenSize.height * 0.7,
+                          height: screenSize.height * 0.65,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             border: Border.all(
@@ -126,10 +126,24 @@ class _SellScreenState extends State<SellScreen> {
                               const Text(
                                 "Category Of Foods",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 17),
+                                    fontWeight: FontWeight.bold, fontSize: 16),
                               ),
+                              SizedBox(height: 2),
+                              // ListTile(
+                              //   title: Text("Other Food"),
+                              //   leading: Radio(
+                              //     value: 1,
+                              //     groupValue: selected,
+                              //     onChanged: (int? i) {
+                              //       setState(() {
+                              //         selected = i!;
+                              //       });
+                              //     },
+                              //   ),
+                              // ),
+                              SizedBox(height: 2),
                               ListTile(
-                                title: Text("Other Food"),
+                                title: const Text("Raw Food"),
                                 leading: Radio(
                                   value: 1,
                                   groupValue: selected,
@@ -140,8 +154,9 @@ class _SellScreenState extends State<SellScreen> {
                                   },
                                 ),
                               ),
+                              SizedBox(height: 2),
                               ListTile(
-                                title: const Text("Raw Food"),
+                                title: const Text("Cooked Food"),
                                 leading: Radio(
                                   value: 2,
                                   groupValue: selected,
@@ -152,22 +167,11 @@ class _SellScreenState extends State<SellScreen> {
                                   },
                                 ),
                               ),
-                              ListTile(
-                                title: const Text("Cooked Food"),
-                                leading: Radio(
-                                  value: 3,
-                                  groupValue: selected,
-                                  onChanged: (int? i) {
-                                    setState(() {
-                                      selected = i!;
-                                    });
-                                  },
-                                ),
-                              ),
+                              SizedBox(height: 2),
                               ListTile(
                                 title: const Text("Packed Food"),
                                 leading: Radio(
-                                  value: 4,
+                                  value: 3,
                                   groupValue: selected,
                                   onChanged: (int? i) {
                                     setState(() {

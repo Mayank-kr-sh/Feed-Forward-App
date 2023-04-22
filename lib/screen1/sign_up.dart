@@ -62,10 +62,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: screenSize.height * 0.22,
                     ),
                     SizedBox(
-                      height: screenSize.height * 0.7,
+                      height: screenSize.height / 1.5,
                       child: FittedBox(
                         child: Container(
-                          height: screenSize.height * 0.7,
+                          height: screenSize.height / 1.2,
                           width: screenSize.width,
                           padding: const EdgeInsets.all(25),
                           decoration: BoxDecoration(

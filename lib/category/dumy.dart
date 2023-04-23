@@ -21,7 +21,7 @@ class _DonationPageState extends State<DonationPag>
     super.initState();
     _scaleAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
     );
     _scaleAnimation =
         Tween<double>(begin: 0.0, end: 1.0).animate(_scaleAnimationController);
@@ -62,35 +62,35 @@ class _DonationPageState extends State<DonationPag>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Donation Page'),
+        title: const Text('Donation Page'),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
+            const Text(
               'Thank you for choosing to donate!',
               style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16.0),
-            Text(
+            const SizedBox(height: 16.0),
+            const Text(
               'Your donation will be used to support our organization and its activities. Please provide your details below:',
               style: TextStyle(fontSize: 16.0),
             ),
-            SizedBox(height: 32.0),
+            const SizedBox(height: 32.0),
             TextField(
               onChanged: (value) {
                 setState(() {
                   donorName = value;
                 });
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Donor Name',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextField(
               onChanged: (value) {
                 setState(() {
@@ -101,30 +101,30 @@ class _DonationPageState extends State<DonationPag>
               inputFormatters: [
                 FilteringTextInputFormatter.digitsOnly,
               ],
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Donation Amount',
                 prefixText: '\$ ',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 32.0),
+            const SizedBox(height: 32.0),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.green,
-                padding: EdgeInsets.all(16.0),
+                backgroundColor: Colors.yellow,
+                padding: const EdgeInsets.all(16.0),
               ),
               onPressed: () {
                 _showConfirmationDialog();
               },
-              child: Text(
+              child: const Text(
                 'Submit Donation',
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
-            SizedBox(height: 32.0),
+            const SizedBox(height: 32.0),
             ScaleTransition(
               scale: _scaleAnimation,
-              child: Icon(
+              child: const Icon(
                 Icons.check_circle,
                 size: 48.0,
                 color: Colors.green,

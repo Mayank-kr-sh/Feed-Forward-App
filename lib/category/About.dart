@@ -1,12 +1,11 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:food_donation/screen/homepage.dart';
 import 'package:food_donation/screen/teams/kashish.dart';
 import 'package:food_donation/screen/teams/mayank.dart';
 import 'package:food_donation/screen/teams/milind.dart';
 import 'package:food_donation/screen/teams/tanush.dart';
+import 'package:food_donation/screen1/home_screen.dart';
 
 class About extends StatefulWidget {
   const About({super.key});
@@ -140,7 +139,7 @@ class _AboutState extends State<About> {
             maxRadius: 40,
             backgroundImage: AssetImage("images/Logo.png"),
           ),
-          Container(
+          SizedBox(
             height: 80,
             width: 200,
             //color: Colors.amberAccent,
@@ -253,12 +252,12 @@ class _AboutState extends State<About> {
       padding: const EdgeInsets.all(20.0),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
           colors: [
-            Color.fromARGB(255, 159, 237, 85),
-            Colors.green,
+            Color.fromARGB(255, 100, 220, 242),
+            Color.fromARGB(255, 33, 82, 243),
           ],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
         ),
         boxShadow: [
           BoxShadow(
@@ -277,31 +276,49 @@ class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 239, 234, 209),
+      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
       appBar: AppBar(
+        flexibleSpace: Container(
+            decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(120, 0, 0, 0),
+              blurRadius: 20,
+            ),
+          ],
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 172, 226, 241),
+              Color.fromARGB(255, 18, 160, 248),
+              Color.fromARGB(217, 56, 48, 209),
+            ],
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+          ),
+        )),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.black,
-            size: 30,
+            color: Colors.white,
+            size: 28,
           ),
           onPressed: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (ctx) => HomePage(),
+                builder: (ctx) => const HomeScreen(),
               ),
             );
           },
         ),
         //elevation: 0.0,
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 114, 243, 118),
+        //centerTitle: true,
+        // backgroundColor: Color.fromARGB(255, 114, 243, 118),
         title: const Text(
           "About",
           style: TextStyle(
-            fontSize: 25,
-            color: Colors.black,
-            fontWeight: FontWeight.w900,
+            fontSize: 24,
+            color: Colors.white,
+            //fontWeight: FontWeight.w900,
           ),
         ),
       ),

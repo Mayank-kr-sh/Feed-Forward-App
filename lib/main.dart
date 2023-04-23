@@ -5,15 +5,6 @@ import 'package:food_donation/layout/screen_layout.dart';
 import 'package:food_donation/provider/user_details_provider.dart';
 import 'package:food_donation/screen1/sign_in.dart';
 import 'package:provider/provider.dart';
-// import 'package:food_donation/provider/User_data.dart';
-// import 'package:food_donation/screen/login.dart';
-// import 'package:food_donation/screen/payment.dart';
-// import 'package:food_donation/screen1/account_screen.dart';
-// import 'package:food_donation/screen1/cart_screen.dart';
-// import 'package:food_donation/screen1/more_screen.dart';
-// import 'package:food_donation/screen1/product_screen.dart';
-// import 'package:food_donation/screen1/result_screen.dart';
-// import 'package:food_donation/user_Details/product.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

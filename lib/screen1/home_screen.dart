@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_donation/category/About.dart';
+import 'package:food_donation/category/chat.dart';
 import 'package:food_donation/category/money_donation.dart';
 import 'package:food_donation/category/profile.dart';
 import 'package:food_donation/resourses/cloudfirestore.dart';
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _openDrawer() {
     return Drawer(
-      backgroundColor: const Color.fromARGB(255, 239, 234, 209),
+      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
       child: ListView(
         children: [
           DrawerHeader(
@@ -93,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: CircleAvatar(
                     backgroundColor: Colors.white54,
                     radius: 40,
-                    backgroundImage: AssetImage("images/Logo.png"),
+                    backgroundImage: AssetImage("images/logo1.jpg"),
                   ),
                 ),
                 const SizedBox(width: 20),
@@ -145,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (ctx) => HomePage(),
+                  builder: (ctx) => const HomeScreen(),
                 ),
               );
             },
@@ -166,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (ctx) => const Contact(),
+                  builder: (ctx) => ChatScreen(),
                 ),
               );
             },

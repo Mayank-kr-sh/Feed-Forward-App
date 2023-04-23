@@ -1,6 +1,6 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 import 'package:flutter/material.dart';
-import 'package:food_donation/screen/about.dart';
+import 'package:food_donation/category/About.dart';
 import 'package:food_donation/screen/components/my_button.dart';
 import 'package:food_donation/screen/components/text_form_email.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';

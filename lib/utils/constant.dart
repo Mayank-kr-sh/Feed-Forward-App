@@ -4,6 +4,7 @@ import 'package:food_donation/category/Chat_bot.dart';
 import 'package:food_donation/category/Chat_watssapp.dart';
 import 'package:food_donation/category/chat.dart';
 import 'package:food_donation/category/money_donation.dart';
+import 'package:food_donation/category/ngo.dart';
 import 'package:food_donation/category/profile.dart';
 import 'package:food_donation/screen/components/simple_product.dart';
 import 'package:food_donation/screen/location.dart';
@@ -143,6 +144,7 @@ List<Widget> productsList = [
   const Payment(),
   ChatScreen(),
   const Location(),
+  const NGO(),
   const MyProfile(),
   const About(),
   const MoreScreen(),

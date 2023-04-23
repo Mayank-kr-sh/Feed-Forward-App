@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_donation/screen1/home_screen.dart';
 
-class Mayank extends StatelessWidget {
-  const Mayank({super.key});
+class NGO extends StatelessWidget {
+  const NGO({super.key});
 
   @override
   Widget build(BuildContext context) {

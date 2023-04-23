@@ -15,8 +15,8 @@ class ChatOption {
 class ChatScreen extends StatelessWidget {
   final List<ChatOption> chatOptions = [
     ChatOption(
-      title: "Boat",
-      subtitle: "Chat with Boat",
+      title: "Bot",
+      subtitle: "Chat with Bot",
       imageUrl:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuvHjWqFdb-58g00FVMcY_pQxLYro-sUS9EL7xJYQ&s",
     ),

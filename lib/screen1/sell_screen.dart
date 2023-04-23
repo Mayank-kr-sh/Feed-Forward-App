@@ -23,7 +23,7 @@ class _SellScreenState extends State<SellScreen> {
   TextEditingController nameController = TextEditingController();
   TextEditingController locationController = TextEditingController();
   TextEditingController mssgController = TextEditingController();
-  List<int> keysForDiscount = [0, 70, 60, 50];
+  List<int> keysForDiscount = [70, 60, 50];
   //keysofdiscoutn[selected -1]
 
   @override
@@ -50,8 +50,10 @@ class _SellScreenState extends State<SellScreen> {
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                   child: Center(
                     child: Column(
+
                       crossAxisAlignment: CrossAxisAlignment.center,
                       //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
                       children: [
                         const Padding(padding: EdgeInsets.only(top: 8)),
                         Container(
@@ -171,6 +173,7 @@ class _SellScreenState extends State<SellScreen> {
                                       });
                                     },
                                   ),
+
                                 ),
                                 ListTile(
                                   title: const Text("Packed Food"),

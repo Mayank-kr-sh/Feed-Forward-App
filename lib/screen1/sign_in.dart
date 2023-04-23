@@ -46,7 +46,7 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
           child: SizedBox(
             height: screenSize.height,
-            // width: screenSize.width,
+            width: screenSize.width,
 
             // height: 100,
             // width: 80,
@@ -64,8 +64,8 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     //SvgPicture.asset("images/doc.svg"),
                     Container(
-                      height: screenSize.height * 0.56,
-                      width: screenSize.width * 0.9,
+                      height: screenSize.height / 1.7,
+                      width: screenSize.width * 1.8,
                       padding: const EdgeInsets.all(25),
                       decoration: BoxDecoration(
                           boxShadow: const [
@@ -184,9 +184,9 @@ class _SignInScreenState extends State<SignInScreen> {
                               child: const Text(
                                 "Create an Donation Account",
                                 style: TextStyle(
-                                  letterSpacing: 0.5,
-                                  color: Colors.black,
-                                ),
+                                    letterSpacing: 0.5,
+                                    color: Colors.black,
+                                    fontSize: 12),
                               ),
                             ),
                           )

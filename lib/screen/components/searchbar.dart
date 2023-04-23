@@ -355,6 +355,7 @@ class SearchBarWidget extends StatelessWidget with PreferredSizeWidget {
     return SafeArea(
       child: Container(
         height: screenSize.height,
+        width: screenSize.width,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -388,7 +389,7 @@ class SearchBarWidget extends StatelessWidget with PreferredSizeWidget {
                     ),
                   ),
             SizedBox(
-              width: 240,
+              width: 200,
               height: 50,
               child: Container(
                 decoration: BoxDecoration(

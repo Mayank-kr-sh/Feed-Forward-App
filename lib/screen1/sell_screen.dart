@@ -39,7 +39,7 @@ class _SellScreenState extends State<SellScreen> {
     Size screenSize = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
       body: !isLoading
           ? SingleChildScrollView(
               child: SizedBox(
@@ -51,187 +51,199 @@ class _SellScreenState extends State<SellScreen> {
                   child: Center(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Stack(
-                          children: [
-                            image == null
-                                ? CircleAvatar(
-                                    radius: 50,
-                                    backgroundColor:
-                                        Color.fromARGB(54, 158, 158, 158),
-                                    child: Image.asset(
-                                      "images/upload.png",
-                                      height: screenSize.height / 3,
-                                    ),
-                                  )
-                                : Image.memory(
-                                    image!,
-                                    height: screenSize.height / 5,
-                                  ),
-                            Positioned.fill(
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: IconButton(
-                                  onPressed: () async {
-                                    Uint8List? temp = await Utils().pickImage();
-                                    if (temp != null) {
-                                      setState(() {
-                                        image = temp;
-                                      });
-                                    }
-                                  },
-                                  icon: const Icon(
-                                    Icons.file_upload_rounded,
-                                    color: Colors.grey,
-                                    size: 10,
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
+                        const Padding(padding: EdgeInsets.only(top: 8)),
                         Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 35, vertical: 10),
-                          height: screenSize.height * 0.7,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 1,
-                            ),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          height: screenSize.height / 8,
+                          child: Stack(
                             children: [
-                              TextFieldWidget(
-                                  title: "Food Name",
-                                  controller: nameController,
-                                  obscureText: false,
-                                  hintText: "Enter the name of the item"),
-                              TextFieldWidget(
-                                  title: "Location",
-                                  controller: locationController,
-                                  obscureText: false,
-                                  hintText: "Enter Location to Pick Up Food"),
-                              TextFieldWidget(
-                                  title: "Other Information",
-                                  controller: locationController,
-                                  obscureText: false,
-                                  hintText:
-                                      "Please Mention the quality of food"),
-                              const Text(
-                                "Category Of Foods",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 17),
-                              ),
-                              ListTile(
-                                title: Text("Other Food"),
-                                leading: Radio(
-                                  value: 1,
-                                  groupValue: selected,
-                                  onChanged: (int? i) {
-                                    setState(() {
-                                      selected = i!;
-                                    });
-                                  },
-                                ),
-                              ),
-                              ListTile(
-                                title: const Text("Raw Food"),
-                                leading: Radio(
-                                  value: 2,
-                                  groupValue: selected,
-                                  onChanged: (int? i) {
-                                    setState(() {
-                                      selected = i!;
-                                    });
-                                  },
-                                ),
-                              ),
-                              ListTile(
-                                title: const Text("Cooked Food"),
-                                leading: Radio(
-                                  value: 3,
-                                  groupValue: selected,
-                                  onChanged: (int? i) {
-                                    setState(() {
-                                      selected = i!;
-                                    });
-                                  },
-                                ),
-                              ),
-                              ListTile(
-                                title: const Text("Packed Food"),
-                                leading: Radio(
-                                  value: 4,
-                                  groupValue: selected,
-                                  onChanged: (int? i) {
-                                    setState(() {
-                                      selected = i!;
-                                    });
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          // color: Colors.amber
-                          width: screenSize.width * 0.6,
-                          child: Column(
-                            children: [
-                              CustomMainButton(
-                                color: Colors.yellow,
-                                isLoading: isLoading,
-                                onPressed: () async {
-                                  String output = await CloudFirestoreClass()
-                                      .uploadProductToDatabase(
-                                          image: image,
-                                          productName: nameController.text,
-                                          rawCost: locationController.text,
-                                          discount:
-                                              keysForDiscount[selected - 1],
-                                          sellerName:
-                                              Provider.of<UserDetailsProvider>(
-                                                      context,
-                                                      listen: false)
-                                                  .userDetails
-                                                  .name,
-                                          sellerUid: FirebaseAuth
-                                              .instance.currentUser!.uid);
-                                  if (output == "success") {
-                                    // ignore: use_build_context_synchronously
-                                    Utils().showSnackBar(
-                                        context: context,
-                                        content: "Notified Sucessfully");
-                                  } else {
-                                    // ignore: use_build_context_synchronously
-                                    Utils().showSnackBar(
-                                        context: context, content: output);
-                                  }
-                                },
-                                child: const Text(
-                                  "Notify To Organization",
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-                              CustomMainButton(
-                                color: Colors.grey[300]!,
-                                isLoading: false,
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: const Text(
-                                  "Back to Profile",
-                                  style: TextStyle(color: Colors.black),
+                              image == null
+                                  ? CircleAvatar(
+                                      radius: 50,
+                                      backgroundColor:
+                                          Color.fromARGB(54, 158, 158, 158),
+                                      child: Image.asset(
+                                        "images/upload.png",
+                                        height: screenSize.height / 2,
+                                      ),
+                                    )
+                                  : Image.memory(
+                                      image!,
+                                      height: screenSize.height / 2,
+                                    ),
+                              Positioned.fill(
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: IconButton(
+                                    onPressed: () async {
+                                      Uint8List? temp =
+                                          await Utils().pickImage();
+                                      if (temp != null) {
+                                        setState(() {
+                                          image = temp;
+                                        });
+                                      }
+                                    },
+                                    icon: const Icon(
+                                      Icons.file_upload_rounded,
+                                      color: Color.fromARGB(255, 250, 241, 229),
+                                      size: 10,
+                                    ),
+                                  ),
                                 ),
                               )
                             ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 25, vertical: 10),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.grey,
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                TextFieldWidget(
+                                    title: "Food Name",
+                                    controller: nameController,
+                                    obscureText: false,
+                                    hintText: "Enter the name of the item"),
+                                const SizedBox(height: 8),
+                                TextFieldWidget(
+                                    title: "Location",
+                                    controller: mssgController,
+                                    obscureText: false,
+                                    hintText: "Enter Location to Pick Up Food"),
+                                const SizedBox(height: 8),
+                                TextFieldWidget(
+                                    title: "Quality Review",
+                                    controller: locationController,
+                                    obscureText: false,
+                                    hintText: "Rate the quality of food"),
+                                const SizedBox(height: 8),
+                                const Text(
+                                  "Category Of Foods",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 17),
+                                ),
+                                ListTile(
+                                  title: const Text("Other Food"),
+                                  leading: Radio(
+                                    value: 1,
+                                    groupValue: selected,
+                                    onChanged: (int? i) {
+                                      setState(() {
+                                        selected = i!;
+                                      });
+                                    },
+                                  ),
+                                ),
+                                ListTile(
+                                  title: const Text("Raw Food"),
+                                  leading: Radio(
+                                    value: 2,
+                                    groupValue: selected,
+                                    onChanged: (int? i) {
+                                      setState(() {
+                                        selected = i!;
+                                      });
+                                    },
+                                  ),
+                                ),
+                                ListTile(
+                                  title: const Text("Cooked Food"),
+                                  leading: Radio(
+                                    value: 3,
+                                    groupValue: selected,
+                                    onChanged: (int? i) {
+                                      setState(() {
+                                        selected = i!;
+                                      });
+                                    },
+                                  ),
+                                ),
+                                ListTile(
+                                  title: const Text("Packed Food"),
+                                  leading: Radio(
+                                    value: 4,
+                                    groupValue: selected,
+                                    onChanged: (int? i) {
+                                      setState(() {
+                                        selected = i!;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: SizedBox(
+                            // color: Colors.amber
+                            width: screenSize.width * 0.6,
+                            child: Column(
+                              children: [
+                                CustomMainButton(
+                                  color: Colors.yellow,
+                                  isLoading: isLoading,
+                                  onPressed: () async {
+                                    String output = await CloudFirestoreClass()
+                                        .uploadProductToDatabase(
+                                            image: image,
+                                            productName: nameController.text,
+                                            rawCost: locationController.text,
+                                            discount:
+                                                keysForDiscount[selected - 1],
+                                            sellerName: Provider.of<
+                                                        UserDetailsProvider>(
+                                                    context,
+                                                    listen: false)
+                                                .userDetails
+                                                .name,
+                                            sellerUid: FirebaseAuth
+                                                .instance.currentUser!.uid);
+                                    if (output == "success") {
+                                      // ignore: use_build_context_synchronously
+                                      Utils().showSnackBar(
+                                          context: context,
+                                          content: "Notified Sucessfully");
+                                    } else {
+                                      // ignore: use_build_context_synchronously
+                                      Utils().showSnackBar(
+                                          context: context, content: output);
+                                    }
+                                  },
+                                  child: const Text(
+                                    "Notify To Organization",
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                CustomMainButton(
+                                  color: Colors.grey[300]!,
+                                  isLoading: false,
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text(
+                                    "Back to Profile",
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         )
                       ],

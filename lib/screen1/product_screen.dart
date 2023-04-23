@@ -12,7 +12,6 @@ import 'package:food_donation/screen/components/searchbar.dart';
 import 'package:food_donation/screen/components/user_detail.dart';
 import 'package:food_donation/user_Details/product.dart';
 import 'package:food_donation/user_Details/review_model.dart';
-import 'package:food_donation/user_Details/user_details.dart';
 import 'package:food_donation/utils/utils.dart';
 import 'package:provider/provider.dart';
 
@@ -47,7 +46,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: screenSize.height - (170 + (170 / 2)),
+                      height: screenSize.height - (170 + (170)),
                       child: Column(
                         children: [
                           const SizedBox(
@@ -81,7 +80,8 @@ class _ProductScreenState extends State<ProductScreen> {
                           Padding(
                             padding: const EdgeInsets.all(15),
                             child: Container(
-                              height: screenSize.height / 3,
+                              //color: Colors.amber,
+                              height: screenSize.height / 4,
                               constraints: BoxConstraints(
                                   maxHeight: screenSize.height / 3),
                               child: Image.network(widget.productModel.url),
@@ -107,7 +107,7 @@ class _ProductScreenState extends State<ProductScreen> {
                             },
                             //onPressed: () {},
                             child: const Text(
-                              "Buy Now",
+                              "Claim Now",
                               style: TextStyle(color: Colors.black),
                             ),
                           ),
@@ -119,11 +119,12 @@ class _ProductScreenState extends State<ProductScreen> {
                               await CloudFirestoreClass().addProductToCart(
                                   productModel: widget.productModel);
                               Utils().showSnackBar(
-                                  context: context, content: "Added to cart.");
+                                  context: context,
+                                  content: "Redirect to Chat section.");
                             },
                             //onPressed: () {},
                             child: const Text(
-                              "Add to cart",
+                              "Contact Donors",
                               style: TextStyle(color: Colors.black),
                             ),
                           ),
@@ -137,7 +138,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                         ));
                               },
                               // onPressed: () {},
-                              text: "Add a review for this product"),
+                              text: "Drop Review for this items"),
                         ],
                       ),
                     ),

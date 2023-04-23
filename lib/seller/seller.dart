@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_donation/screen/about.dart';
+import 'package:food_donation/category/About.dart';
 
 class Tanush extends StatelessWidget {
   const Tanush({super.key});
@@ -18,14 +18,11 @@ class Tanush extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (ctx) => About(),
+                builder: (ctx) => const About(),
               ),
             );
           },
         ),
-        //elevation: 0.0,
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 114, 243, 118),
         title: const Text(
           "Korgaokar Tanush Dharmesh",
           style: TextStyle(

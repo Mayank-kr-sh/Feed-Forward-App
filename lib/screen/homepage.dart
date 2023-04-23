@@ -2,7 +2,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:food_donation/screen/about.dart';
+import 'package:food_donation/category/About.dart';
 import 'package:food_donation/screen/contact.dart';
 import 'package:food_donation/screen/location.dart';
 import 'package:food_donation/screen/login.dart';
@@ -491,7 +491,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _openDrawer(context) {
     return Drawer(
-      backgroundColor: const Color.fromARGB(255, 239, 234, 209),
+      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
       child: ListView(
         children: [
           DrawerHeader(

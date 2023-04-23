@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_donation/screen/about.dart';
+import 'package:food_donation/category/About.dart';
 
 class Kashish extends StatelessWidget {
   const Kashish({super.key});
@@ -7,13 +7,31 @@ class Kashish extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 239, 234, 209),
+      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
       appBar: AppBar(
+        flexibleSpace: Container(
+            decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(120, 0, 0, 0),
+              blurRadius: 20,
+            ),
+          ],
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 172, 226, 241),
+              Color.fromARGB(255, 18, 160, 248),
+              Color.fromARGB(217, 56, 48, 209),
+            ],
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+          ),
+        )),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.black,
-            size: 30,
+            color: Colors.white,
+            size: 28,
           ),
           onPressed: () {
             Navigator.of(context).pushReplacement(
@@ -23,14 +41,11 @@ class Kashish extends StatelessWidget {
             );
           },
         ),
-        //elevation: 0.0,
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 114, 243, 118),
         title: const Text(
           "Kashish Raju Lonpande",
           style: TextStyle(
             fontSize: 25,
-            color: Colors.black,
+            color: Colors.white,
             //fontWeight: FontWeight.w900,
           ),
         ),

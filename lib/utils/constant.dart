@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:food_donation/category/About.dart';
-import 'package:food_donation/category/dummy.dart';
-import 'package:food_donation/category/dumy.dart';
+import 'package:food_donation/category/Chat_bot.dart';
+import 'package:food_donation/category/Chat_watssapp.dart';
+import 'package:food_donation/category/chat.dart';
 import 'package:food_donation/category/money_donation.dart';
 import 'package:food_donation/category/profile.dart';
 import 'package:food_donation/screen/components/simple_product.dart';
-import 'package:food_donation/screen/homepage.dart';
 import 'package:food_donation/screen/location.dart';
-import 'package:food_donation/screen/teams/mayank.dart';
 import 'package:food_donation/screen1/account_screen.dart';
 import 'package:food_donation/screen1/cart_screen.dart';
 import 'package:food_donation/screen1/home_screen.dart';
@@ -15,7 +14,6 @@ import 'package:food_donation/screen1/more_screen.dart';
 import 'package:food_donation/screen1/sell_screen.dart';
 import 'package:food_donation/user_Details/product.dart';
 
-// const double kAppBarHeight = 80;
 const List<Widget> screens = [
   HomeScreen(),
   AccountScreen(),
@@ -25,8 +23,8 @@ const List<Widget> screens = [
 
 const List<String> categoriesList = [
   "Home",
-  "Food Donation",
-  "Money Donation",
+  "Donation",
+  "Donation",
   "Chat Us",
   "Location",
   "NGO's",
@@ -34,7 +32,17 @@ const List<String> categoriesList = [
   "About Us",
   "More"
 ];
-
+List<Icon> iconList = [
+  const Icon(Icons.home, color: Colors.white, size: 40.0),
+  const Icon(Icons.food_bank_rounded, color: Colors.white, size: 35.0),
+  const Icon(Icons.currency_rupee_sharp, color: Colors.white, size: 35.0),
+  const Icon(Icons.chat_bubble, color: Colors.white, size: 28.0),
+  const Icon(Icons.location_on, color: Colors.white, size: 30.0),
+  const Icon(Icons.home_work_rounded, color: Colors.white, size: 30.0),
+  const Icon(Icons.person_2, color: Colors.white, size: 38.0),
+  const Icon(Icons.info, color: Colors.white, size: 30.0),
+  const Icon(Icons.swipe_right_rounded, color: Colors.white, size: 25.0),
+];
 const List<String> categoryLogos = [
   "https://i.pinimg.com/originals/53/fd/2d/53fd2db5cac9a59cfa336997c09f1b97.jpg",
   "https://thumbs.dreamstime.com/b/ food-donation-pixel-perfect-rgb-color-icon-dark-theme-hunger-relief-organization-rescue-program-simple-filled-line-drawing-241577184.jpg",
@@ -130,15 +138,11 @@ List<Widget> testChildren = [
 ];
 
 List<Widget> productsList = [
-  HomePage(),
-  //const HomeScreen(),
-  //const HomeScreen(),
+  const HomeScreen(),
   const SellScreen(),
   const Payment(),
-  DonationPag(),
-  DonationPage(),
+  ChatScreen(),
   const Location(),
-  const Mayank(),
   const MyProfile(),
   const About(),
   const MoreScreen(),

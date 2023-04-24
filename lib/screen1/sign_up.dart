@@ -1,8 +1,8 @@
 // import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:food_donation/resourses/authenticatuon.dart';
-import 'package:food_donation/screen/components/custom_main.dart';
-import 'package:food_donation/screen/components/text_field.dart';
+import 'package:food_donation/screen/Widgets/custom_main.dart';
+import 'package:food_donation/screen/Widgets/text_field.dart';
 import 'package:food_donation/screen1/sign_in.dart';
 import 'package:food_donation/utils/utils.dart';
 

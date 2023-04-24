@@ -2,15 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_donation/provider/user_details_provider.dart';
-import 'package:food_donation/screen/components/account_app_bar.dart';
-import 'package:food_donation/screen/components/custom_main.dart';
-import 'package:food_donation/screen/components/product.dart';
-import 'package:food_donation/screen/components/simple_product.dart';
+import 'package:food_donation/screen/Widgets/account_app_bar.dart';
+import 'package:food_donation/screen/Widgets/custom_main.dart';
+import 'package:food_donation/screen/Widgets/product.dart';
+import 'package:food_donation/screen/Widgets/simple_product.dart';
 import 'package:food_donation/screen1/sell_screen.dart';
 import 'package:food_donation/user_Details/order_details.dart';
 import 'package:food_donation/user_Details/product.dart';
 import 'package:food_donation/user_Details/user_details.dart';
-import 'package:food_donation/utils/constant.dart';
 import 'package:provider/provider.dart';
 
 class AccountScreen extends StatefulWidget {

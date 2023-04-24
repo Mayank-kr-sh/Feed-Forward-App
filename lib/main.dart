@@ -17,54 +17,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return ChangeNotifierProvider<UserProvider>(
-    //   create: (context) => UserProvider(),
-    //   child: MaterialApp(
-    //     debugShowCheckedModeBanner: false,
-    //     theme: ThemeData(
-    //       snackBarTheme: const SnackBarThemeData(
-    //         actionTextColor: Colors.white,
-    //         backgroundColor: Colors.green,
-    //       ),
-    //       primaryColor: const Color.fromARGB(255, 232, 241, 58),
-    //       visualDensity: VisualDensity.adaptivePlatformDensity,
-    //     ),
-    //     home: StreamBuilder(
-    //       stream: FirebaseAuth.instance.authStateChanges(),
-    //       builder: (context, AsyncSnapshot<User?> user) {
-    //         if (user.connectionState == ConnectionState.waiting) {
-    //           return const Center(
-    //             child: CircularProgressIndicator(
-    //               color: Colors.orange,
-    //             ),
-    //           );
-    //         } else if (user.hasData) {
-    //           return const ScreenLayout();
-    //           // return ResultsScreen(query: "xyz");
-    //           // return ProductScreen(
-    //           //   productModel: ProductModel(
-    //           //     url:
-    //           //         "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80",
-    //           //     productName: "Company Logo",
-    //           //     cost: 100,
-    //           //     discount: 10,
-    //           //     uid: "mayank",
-    //           //     sellerName: "food",
-    //           //     sellerUid: "123",
-    //           //     rating: 8,
-    //           //     noOfRating: 8,
-    //           //   ),
-    //           // );
-    //         } else {
-    //           return const SignInScreen();
-    //         }
-    //       },
-    //     ),
-    //     // home: ResultsScreen(
-    //     //   query: "Mayank",
-    //     // ),
-    //   ),
-    // );
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => UserDetailsProvider())],
       child: MaterialApp(
@@ -84,9 +36,7 @@ class MyApp extends StatelessWidget {
                 ),
               );
             } else if (user.hasData) {
-              //return Text("Sign In");
               return const ScreenLayout();
-              //return const SellScreen();
             } else {
               return const SignInScreen();
             }

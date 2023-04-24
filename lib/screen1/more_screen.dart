@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_donation/screen/components/category_widgit.dart';
-import 'package:food_donation/screen/components/searchbar.dart';
+import 'package:food_donation/screen/Widgets/category_widgit.dart';
+import 'package:food_donation/screen/Widgets/searchbar.dart';
 import 'package:food_donation/utils/constant.dart';
 
 class MoreScreen extends StatelessWidget {

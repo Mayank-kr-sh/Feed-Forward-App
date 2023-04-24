@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:food_donation/screen/components/loading.dart';
-import 'package:food_donation/screen/components/result_widget.dart';
-import 'package:food_donation/screen/components/searchbar.dart';
+import 'package:food_donation/screen/Widgets/loading.dart';
+import 'package:food_donation/screen/Widgets/result_widget.dart';
+import 'package:food_donation/screen/Widgets/searchbar.dart';
 import 'package:food_donation/user_Details/product.dart';
 
 class ResultsScreen extends StatelessWidget {
@@ -15,6 +15,7 @@ class ResultsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
       appBar: SearchBarWidget(
         isReadOnly: false,
         hasBackButton: true,

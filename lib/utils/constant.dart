@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:food_donation/category/About.dart';
-import 'package:food_donation/category/Chat_bot.dart';
-import 'package:food_donation/category/Chat_watssapp.dart';
-import 'package:food_donation/category/chat.dart';
-import 'package:food_donation/category/money_donation.dart';
-import 'package:food_donation/category/ngo.dart';
-import 'package:food_donation/category/profile.dart';
-import 'package:food_donation/screen/components/simple_product.dart';
-import 'package:food_donation/screen/location.dart';
+import 'package:food_donation/Horizantal_Category/About.dart';
+import 'package:food_donation/Horizantal_Category/chat.dart';
+import 'package:food_donation/Horizantal_Category/money_donation.dart';
+import 'package:food_donation/Horizantal_Category/ngo.dart';
+import 'package:food_donation/Horizantal_Category/profile.dart';
+import 'package:food_donation/screen/Widgets/simple_product.dart';
 import 'package:food_donation/screen1/account_screen.dart';
 import 'package:food_donation/screen1/cart_screen.dart';
 import 'package:food_donation/screen1/home_screen.dart';
 import 'package:food_donation/screen1/more_screen.dart';
 import 'package:food_donation/screen1/sell_screen.dart';
 import 'package:food_donation/user_Details/product.dart';
+import 'package:location/location.dart';
+
+import '../Horizantal_Category/location.dart';
 
 const List<Widget> screens = [
   HomeScreen(),
@@ -57,7 +57,7 @@ const List<String> categoryLogos = [
 ];
 
 List<String> smallAds = [
-  "https://r1imghtlak.mmtcdn.com/082f1ae6330211eb9c050242ac110004.jpg?&output-quality=75&downsize=583:388&output-format=jpg",
+  "https://r1imghtlak.mmtcdn.com/082f1ae6330211eb9c050242ac110004.jpg?&output-quality=75&downsize=583:388&output-format=jpg%22",
   "https://b.zmtcdn.com/data/pictures/4/2004/ab413ceb3dc0587c18cb1ba6893b7917_featured_v2.jpg",
   "https://i.pinimg.com/originals/f3/39/ac/f339ac13e4b5565b075f11f3681071ee.jpg",
   "https://cdn0.weddingwire.in/vendor/4395/3_2/960/jpg/marriage-garden-madhuvan-marriage-garden-event-space-3_15_364395-161536520227548.jpeg",
@@ -65,9 +65,9 @@ List<String> smallAds = [
 
 const List<String> adItemNames = [
   "Hotels",
-  "Resturants",
+  "Restaurants",
   "Public Events",
-  "Merriages",
+  "Marriages",
 ];
 
 List<Widget> testChildren = [
@@ -143,7 +143,7 @@ List<Widget> productsList = [
   const SellScreen(),
   const Payment(),
   ChatScreen(),
-  const Location(),
+  const MapScreen(),
   const NGO(),
   const MyProfile(),
   const About(),

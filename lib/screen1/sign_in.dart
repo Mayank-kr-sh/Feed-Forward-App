@@ -1,10 +1,11 @@
-// import 'package:firebase_auth/firebase_auth.dart';
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:food_donation/resourses/authenticatuon.dart';
-import 'package:food_donation/screen/components/custom_main.dart';
-import 'package:food_donation/screen/components/text_field.dart';
+import 'package:food_donation/screen/Widgets/custom_main.dart';
+import 'package:food_donation/screen/Widgets/text_field.dart';
+import 'package:food_donation/screen1/home_screen.dart';
 import 'package:food_donation/screen1/sign_up.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_donation/utils/utils.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -112,24 +113,34 @@ class _SignInScreenState extends State<SignInScreen> {
                           Align(
                             alignment: Alignment.center,
                             child: CustomMainButton(
-                              color: Color.fromARGB(255, 246, 193, 79),
+                              color: const Color.fromARGB(255, 246, 193, 79),
                               isLoading: isLoading,
                               onPressed: () async {
                                 setState(() {
-                                  isLoading = false;
-                                  // isLoading = true;
+                                  //isLoading = false;
+                                  isLoading = true;
                                 });
 
                                 String output =
                                     await authenticationMethods.signInUser(
                                         email: emailController.text,
                                         password: passwordController.text);
-                                setState(() {
-                                  isLoading = true;
-                                });
+
                                 if (output == "success") {
                                   //functions
+                                  setState(() {
+                                    isLoading = false;
+                                  });
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const HomeScreen(),
+                                    ),
+                                  );
                                 } else {
+                                  setState(() {
+                                    isLoading = false;
+                                  });
                                   Utils().showSnackBar(
                                     context: context,
                                     content: output,

@@ -5,12 +5,15 @@
     <uses-permission
         android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.SEND_SMS"/>
+
    <application
         android:label="food_donation"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
             <meta-data android:name="com.google.android.geo.API_KEY"
                     android:value="AIzaSyBfU0cupaJbdHFX1gWjkYpr2_C_QjVku9I"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:food_donation/provider/user_details_provider.dart';
 import 'package:food_donation/resourses/cloudfirestore.dart';
-import 'package:food_donation/screen/components/cost_item.dart';
-import 'package:food_donation/screen/components/custom_main.dart';
-import 'package:food_donation/screen/components/custome_simple_rounded.dart';
-import 'package:food_donation/screen/components/rating_widget.dart';
-import 'package:food_donation/screen/components/review_dialog.dart';
-import 'package:food_donation/screen/components/review_widgit.dart';
-import 'package:food_donation/screen/components/searchbar.dart';
-import 'package:food_donation/screen/components/user_detail.dart';
+import 'package:food_donation/screen/Widgets/cost_item.dart';
+import 'package:food_donation/screen/Widgets/custom_main.dart';
+import 'package:food_donation/screen/Widgets/custome_simple_rounded.dart';
+import 'package:food_donation/screen/Widgets/rating_widget.dart';
+import 'package:food_donation/screen/Widgets/review_dialog.dart';
+import 'package:food_donation/screen/Widgets/review_widgit.dart';
+import 'package:food_donation/screen/Widgets/searchbar.dart';
+import 'package:food_donation/screen/Widgets/user_detail.dart';
 import 'package:food_donation/user_Details/product.dart';
 import 'package:food_donation/user_Details/review_model.dart';
 import 'package:food_donation/utils/utils.dart';
@@ -34,6 +34,7 @@ class _ProductScreenState extends State<ProductScreen> {
     Size screenSize = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 250, 241, 229),
         appBar: SearchBarWidget(
           isReadOnly: true,
           hasBackButton: true,

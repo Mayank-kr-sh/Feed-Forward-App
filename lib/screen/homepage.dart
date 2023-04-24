@@ -1,14 +1,9 @@
-// import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:food_donation/category/About.dart';
-import 'package:food_donation/screen/contact.dart';
-import 'package:food_donation/screen/location.dart';
-import 'package:food_donation/screen/login.dart';
-import 'package:food_donation/screen/payment.dart';
-// import 'package:food_donation/screen/profile.dart';
-import 'package:food_donation/screen/profile1.dart';
+import 'package:food_donation/Horizantal_Category/About.dart';
+import 'package:food_donation/screen1/sign_in.dart';
+import '../Horizantal_Category/location.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -286,7 +281,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (ctx) => const Location(),
+                        builder: (ctx) => MapScreen(),
                       ),
                     );
                   },
@@ -536,7 +531,7 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
-                              builder: (ctx) => const Login(),
+                              builder: (ctx) => const SignInScreen(),
                             ),
                           );
                         },
@@ -600,11 +595,11 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (ctx) => const Contact(),
-                ),
-              );
+              // Navigator.of(context).pushReplacement(
+              //   MaterialPageRoute(
+              //     builder: (ctx) => const Contact(),
+              //   ),
+              // );
             },
             leading: const Icon(
               Icons.contact_phone_outlined,
@@ -642,11 +637,11 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (ctx) => const MyProfile(),
-                ),
-              );
+              // Navigator.of(context).pushReplacement(
+              //   MaterialPageRoute(
+              //     builder: (ctx) => const MyProfile(),
+              //   ),
+              // );
             },
             leading: const Icon(
               Icons.person_outline,
@@ -663,11 +658,11 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (ctx) => const Contact(),
-                ),
-              );
+              // Navigator.of(context).pushReplacement(
+              //   MaterialPageRoute(
+              //     builder: (ctx) => const Contact(),
+              //   ),
+              // );
             },
             leading: const Icon(
               Icons.star_border_outlined,
@@ -684,11 +679,11 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (ctx) => const Payment(),
-                ),
-              );
+              // Navigator.of(context).pushReplacement(
+              //   MaterialPageRoute(
+              //     builder: (ctx) => const Payment(),
+              //   ),
+              // );
             },
             leading: const Icon(
               Icons.work_history_outlined,
@@ -705,11 +700,11 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (ctx) => const Contact(),
-                ),
-              );
+              // Navigator.of(context).pushReplacement(
+              //   MaterialPageRoute(
+              //     builder: (ctx) => const Contact(),
+              //   ),
+              // );
             },
             leading: const Icon(
               Icons.format_quote_outlined,
@@ -726,11 +721,11 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (ctx) => const Contact(),
-                ),
-              );
+              // Navigator.of(context).pushReplacement(
+              //   MaterialPageRoute(
+              //     builder: (ctx) => const Contact(),
+              //   ),
+              // );
             },
             leading: const Icon(
               Icons.exit_to_app,

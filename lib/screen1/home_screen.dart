@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:food_donation/category/About.dart';
-import 'package:food_donation/category/chat.dart';
-import 'package:food_donation/category/money_donation.dart';
-import 'package:food_donation/category/profile.dart';
+import 'package:food_donation/Horizantal_Category/About.dart';
+import 'package:food_donation/Horizantal_Category/chat.dart';
+import 'package:food_donation/Horizantal_Category/money_donation.dart';
+import 'package:food_donation/Horizantal_Category/profile.dart';
 import 'package:food_donation/resourses/cloudfirestore.dart';
-import 'package:food_donation/screen/components/banner.dart';
-import 'package:food_donation/screen/components/category.dart';
-import 'package:food_donation/screen/components/loading.dart';
-import 'package:food_donation/screen/components/product.dart';
-import 'package:food_donation/screen/components/searchbar.dart';
-import 'package:food_donation/screen/components/user_detail.dart';
-import 'package:food_donation/screen/contact.dart';
-import 'package:food_donation/screen/homepage.dart';
-import 'package:food_donation/screen/login.dart';
+import 'package:food_donation/screen/Widgets/banner.dart';
+import 'package:food_donation/screen/Widgets/category.dart';
+import 'package:food_donation/screen/Widgets/loading.dart';
+import 'package:food_donation/screen/Widgets/product.dart';
+import 'package:food_donation/screen/Widgets/searchbar.dart';
+import 'package:food_donation/screen/Widgets/user_detail.dart';
+import 'package:food_donation/screen1/sign_in.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -34,7 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     getData();
     controller.addListener(() {
-      //print(controller.position.pixels);
       setState(() {
         offset = controller.position.pixels;
       });
@@ -109,14 +106,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     const SizedBox(height: 7),
-                    Container(
+                    SizedBox(
                       // color: Colors.amber,
                       height: 30,
                       child: OutlinedButton(
                         onPressed: () {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
-                              builder: (ctx) => const Login(),
+                              builder: (ctx) => const SignInScreen(),
                             ),
                           );
                         },
@@ -128,9 +125,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         child: const Text(
-                          'Login',
+                          'Sign In',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 16,
                           ),
                         ),
@@ -228,11 +225,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (ctx) => const Contact(),
-                ),
-              );
+              // Navigator.of(context).pushReplacement(
+              //   MaterialPageRoute(
+              //     builder: (ctx) => const Contact(),
+              //   ),
+              // );
             },
             leading: const Icon(
               Icons.star_border_outlined,
@@ -256,12 +253,12 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             leading: const Icon(
-              Icons.work_history_outlined,
+              Icons.currency_rupee_outlined,
               color: Color.fromARGB(136, 0, 0, 0),
               size: 30,
             ),
             title: const Text(
-              "History",
+              "Donation GateWay",
               style: TextStyle(
                 color: Color.fromARGB(255, 47, 45, 45),
                 fontSize: 16,
@@ -270,11 +267,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (ctx) => const Contact(),
-                ),
-              );
+              // Navigator.of(context).pushReplacement(
+              //   MaterialPageRoute(
+              //     builder: (ctx) => const Contact(),
+              //   ),
+              // );
             },
             leading: const Icon(
               Icons.format_quote_outlined,
@@ -291,9 +288,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushReplacement(
+              Navigator.push(
+                context,
                 MaterialPageRoute(
-                  builder: (ctx) => const Contact(),
+                  builder: (context) => const SignInScreen(),
                 ),
               );
             },
@@ -404,6 +402,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
       drawer: _openDrawer(),
       appBar: SearchBarWidget(
         isReadOnly: true,

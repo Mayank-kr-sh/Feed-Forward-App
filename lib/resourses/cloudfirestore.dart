@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:food_donation/screen/components/simple_product.dart';
+import 'package:food_donation/screen/Widgets/simple_product.dart';
 import 'package:food_donation/user_Details/order_details.dart';
 import 'package:food_donation/user_Details/product.dart';
 import 'package:food_donation/user_Details/review_model.dart';
@@ -41,7 +41,7 @@ class CloudFirestoreClass {
         .get();
 
     UserDetailsModel userModel = UserDetailsModel.getModelFromJson(
-      (snap.data() as dynamic),
+      (snap.data() as Map<String, dynamic>),
     );
 
     return userModel;

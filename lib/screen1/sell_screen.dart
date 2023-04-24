@@ -3,9 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_donation/provider/user_details_provider.dart';
 import 'package:food_donation/resourses/cloudfirestore.dart';
-import 'package:food_donation/screen/components/custom_main.dart';
-import 'package:food_donation/screen/components/loading.dart';
-import 'package:food_donation/screen/components/text_field.dart';
+import 'package:food_donation/screen/Widgets/custom_main.dart';
+import 'package:food_donation/screen/Widgets/loading.dart';
+import 'package:food_donation/screen/Widgets/text_field.dart';
 import 'package:food_donation/utils/utils.dart';
 import 'package:provider/provider.dart';
 
@@ -23,7 +23,7 @@ class _SellScreenState extends State<SellScreen> {
   TextEditingController nameController = TextEditingController();
   TextEditingController locationController = TextEditingController();
   TextEditingController mssgController = TextEditingController();
-  List<int> keysForDiscount = [70, 60, 50];
+  List<int> keysForDiscount = [0, 70, 60, 50];
   //keysofdiscoutn[selected -1]
 
   @override
@@ -50,7 +50,6 @@ class _SellScreenState extends State<SellScreen> {
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                   child: Center(
                     child: Column(
-
                       crossAxisAlignment: CrossAxisAlignment.center,
                       //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
@@ -62,7 +61,7 @@ class _SellScreenState extends State<SellScreen> {
                             children: [
                               image == null
                                   ? CircleAvatar(
-                                      radius: 50,
+                                      radius: 55,
                                       backgroundColor:
                                           Color.fromARGB(54, 158, 158, 158),
                                       child: Image.asset(
@@ -173,7 +172,6 @@ class _SellScreenState extends State<SellScreen> {
                                       });
                                     },
                                   ),
-
                                 ),
                                 ListTile(
                                   title: const Text("Packed Food"),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_donation/screen/homepage.dart';
 import 'package:food_donation/screen1/home_screen.dart';
 
+import '../layout/screen_layout.dart';
+
 class MyProfile extends StatefulWidget {
   const MyProfile({super.key});
 
@@ -32,7 +34,7 @@ class _MyProfileState extends State<MyProfile> {
     //var userData = widget.userProvider.currentUserData;
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: AppBar(
         flexibleSpace: Container(
           decoration: const BoxDecoration(
@@ -46,23 +48,23 @@ class _MyProfileState extends State<MyProfile> {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Color.fromARGB(255, 172, 226, 241),
-                Color.fromARGB(255, 18, 160, 248),
-                Color.fromARGB(217, 56, 48, 209),
+                Color(0xffFFB200),
+                // Color(0xffFEB139),
+                Color(0xffFFDE00),
               ],
             ),
           ),
         ),
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
             size: 24,
           ),
           onPressed: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (ctx) => const HomeScreen(),
+                builder: (ctx) => const ScreenLayout(),
               ),
             );
           },
@@ -73,7 +75,7 @@ class _MyProfileState extends State<MyProfile> {
           "Profile Page",
           style: TextStyle(
             fontSize: 24,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),
@@ -88,15 +90,16 @@ class _MyProfileState extends State<MyProfile> {
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 100, 220, 242),
-                        Color.fromARGB(255, 33, 82, 243),
+                        Color(0xffFFB200),
+                        Color(0xffFEB139),
+                        Color(0xffFFDE00),
                       ],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
                     borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(60),
-                      bottomRight: Radius.circular(60),
+                      bottomLeft: Radius.circular(80),
+                      bottomRight: Radius.circular(80),
                     ),
                   ),
                 ),
@@ -153,8 +156,7 @@ class _MyProfileState extends State<MyProfile> {
                                   backgroundColor:
                                       Color.fromARGB(255, 184, 190, 190),
                                   child: CircleAvatar(
-                                    backgroundColor:
-                                        Color.fromARGB(255, 118, 115, 101),
+                                    backgroundColor: Color(0xffFFFAE7),
                                     child: Icon(
                                       Icons.edit,
                                       size: 16,
@@ -192,14 +194,14 @@ class _MyProfileState extends State<MyProfile> {
             padding: EdgeInsets.only(top: 100, left: 50),
             child: CircleAvatar(
               radius: 50,
-              backgroundColor: Color.fromARGB(255, 52, 52, 226),
+              backgroundColor: Color(0xff277BC0),
               child: CircleAvatar(
                 backgroundImage: AssetImage(
                   // userData.userImage ??
-                  "images/logo1.jpg",
+                  "images/man.png",
                 ),
                 radius: 48,
-                backgroundColor: Color.fromARGB(255, 239, 234, 209),
+                backgroundColor: Colors.transparent,
               ),
             ),
           )

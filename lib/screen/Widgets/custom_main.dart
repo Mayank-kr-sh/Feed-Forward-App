@@ -34,7 +34,7 @@ class CustomMainButton extends StatelessWidget {
               child: AspectRatio(
                 aspectRatio: 1 / 1,
                 child: CircularProgressIndicator(
-                  color: Colors.white,
+                  color: Color(0xffEFEFEF),
                 ),
               ),
             ),

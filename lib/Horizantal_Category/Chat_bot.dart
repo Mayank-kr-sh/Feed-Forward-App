@@ -72,7 +72,7 @@ class _ChatBotState extends State<ChatBox> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: AppBar(
         flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -84,9 +84,9 @@ class _ChatBotState extends State<ChatBox> {
           ],
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 172, 226, 241),
-              Color.fromARGB(255, 18, 160, 248),
-              Color.fromARGB(217, 56, 48, 209),
+              Color(0xffFFB200),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -94,8 +94,8 @@ class _ChatBotState extends State<ChatBox> {
         )),
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
+            Icons.arrow_back_ios,
+            color: Colors.black,
             size: 24,
           ),
           onPressed: () {
@@ -106,7 +106,10 @@ class _ChatBotState extends State<ChatBox> {
             );
           },
         ),
-        title: const Text('Chat Bot'),
+        title: const Text(
+          'Chat Bot',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Column(
         children: [

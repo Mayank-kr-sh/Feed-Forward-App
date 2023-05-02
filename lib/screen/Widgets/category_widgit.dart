@@ -18,7 +18,7 @@ class CategoryWidget extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: const Color(0xffFFFAE7),
           borderRadius: BorderRadius.circular(7),
           boxShadow: [
             BoxShadow(
@@ -32,7 +32,7 @@ class CategoryWidget extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.network(
+              Image.asset(
                 categoryLogos[index],
               ),
               Padding(

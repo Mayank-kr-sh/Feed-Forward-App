@@ -23,8 +23,9 @@ class UserDetailsBar extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.blue,
-              Color.fromARGB(255, 132, 188, 234),
+              Color(0xffFFA900),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
             ],
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,

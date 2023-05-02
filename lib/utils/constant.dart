@@ -14,6 +14,7 @@ import 'package:food_donation/user_Details/product.dart';
 import 'package:location/location.dart';
 
 import '../Horizantal_Category/location.dart';
+import '../layout/screen_layout.dart';
 
 const List<Widget> screens = [
   HomeScreen(),
@@ -45,15 +46,15 @@ List<Icon> iconList = [
   const Icon(Icons.swipe_right_rounded, color: Colors.white, size: 25.0),
 ];
 const List<String> categoryLogos = [
-  "https://i.pinimg.com/originals/53/fd/2d/53fd2db5cac9a59cfa336997c09f1b97.jpg",
-  "https://thumbs.dreamstime.com/b/ food-donation-pixel-perfect-rgb-color-icon-dark-theme-hunger-relief-organization-rescue-program-simple-filled-line-drawing-241577184.jpg",
-  "https://img.freepik.com/free-vector/letter-e-modern-payment-logo-gradient-colorful_487879-1036.jpg",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwwmcKoujslItm_puqarDitoDSuusm4XeEqvjTs0BTVA&ec=48665701",
-  "https://cdn.dribbble.com/users/4220912/screenshots/18040866/media/4997999ac8c4e88dad77cc142491e052.png?compress=1&resize=400x300",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRbTVrJwalKHJADPEZ5YqheYeKMhCGugkzYU0dPYn9hw&ec=48665701",
-  "https://thumbs.dreamstime.com/b/user-icon-glyph-gray-background-106603565.jpg",
-  "https://pmtips.net/Portals/0/EasyDNNnews/2084/img-7-project-management-tips-on-how-to-motivate-your-team1.jpg",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-x6LPruFIioTH5sCo3JHhqfSyGmL3ChmN5f6URuNNp_3m_OnHLkTo2XKbCSOcfs9-rtaQ3BCMeps&ec=48665701",
+  "images/home.png",
+  "images/food.png",
+  "images/money.png",
+  "images/chat.png",
+  "images/map.png",
+  "images/ngo.png",
+  "images/profile.png",
+  "images/logo2.png",
+  "images/more.png"
 ];
 
 List<String> smallAds = [
@@ -139,7 +140,7 @@ List<Widget> testChildren = [
 ];
 
 List<Widget> productsList = [
-  const HomeScreen(),
+  const ScreenLayout(),
   const SellScreen(),
   const Payment(),
   ChatScreen(),

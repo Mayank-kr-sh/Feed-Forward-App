@@ -12,11 +12,11 @@ class CustomSimpleRoundedButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(9),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(5),
-          border: Border.all(color: Colors.grey, width: 1),
+          color: const Color(0xffEFEFEF),
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: Colors.grey, width: 0.2),
         ),
         child: Text(text),
       ),

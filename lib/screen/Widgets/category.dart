@@ -10,7 +10,7 @@ class CategoriesHorizontalListViewBar extends StatelessWidget {
       height: 80,
       width: double.infinity,
       //color: Color.fromARGB(255, 96, 11, 11),
-      color: const Color.fromARGB(255, 250, 241, 229),
+      color: const Color(0xffFFFAE7),
       child: ListView.builder(
           itemCount: categoriesList.length,
           scrollDirection: Axis.horizontal,
@@ -32,8 +32,8 @@ class CategoriesHorizontalListViewBar extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       CircleAvatar(
+                        backgroundColor: const Color(0xff277BC0),
                         child: iconList[index],
-                        backgroundColor: const Color.fromARGB(189, 42, 15, 245),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10),

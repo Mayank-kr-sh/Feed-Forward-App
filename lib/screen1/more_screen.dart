@@ -9,7 +9,7 @@ class MoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: SearchBarWidget(
         isReadOnly: true,
         hasBackButton: false,

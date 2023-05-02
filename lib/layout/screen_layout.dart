@@ -43,12 +43,13 @@ class _ScreenLayoutState extends State<ScreenLayout> {
         child: Scaffold(
           body: PageView(
             controller: pageController,
+            physics: const NeverScrollableScrollPhysics(),
             children: screens,
-            physics: NeverScrollableScrollPhysics(),
           ),
           bottomNavigationBar: Container(
             //height: 40,
             decoration: BoxDecoration(
+              color: const Color(0xffFFFAE7),
               border: Border(
                 top: BorderSide(color: Colors.grey[400]!, width: 1),
               ),
@@ -57,7 +58,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
               indicator: const BoxDecoration(
                 border: Border(
                   top: BorderSide(
-                    color: Colors.blue,
+                    color: Color(0xffFFB200),
                     width: 4,
                   ),
                 ),
@@ -69,25 +70,33 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                 Tab(
                   child: Icon(
                     Icons.home_outlined,
-                    color: currentPage == 0 ? Colors.blue : Colors.black,
+                    color: currentPage == 0
+                        ? const Color(0xffFFB200)
+                        : Colors.black,
                   ),
                 ),
                 Tab(
                   child: Icon(
                     Icons.account_circle_outlined,
-                    color: currentPage == 1 ? Colors.blue : Colors.black,
+                    color: currentPage == 1
+                        ? const Color(0xffFFB200)
+                        : Colors.black,
                   ),
                 ),
                 Tab(
                   child: Icon(
                     Icons.shopping_cart_outlined,
-                    color: currentPage == 2 ? Colors.blue : Colors.black,
+                    color: currentPage == 2
+                        ? const Color(0xffFFB200)
+                        : Colors.black,
                   ),
                 ),
                 Tab(
                   child: Icon(
                     Icons.menu,
-                    color: currentPage == 3 ? Colors.blue : Colors.black,
+                    color: currentPage == 3
+                        ? const Color(0xffFFB200)
+                        : Colors.black,
                   ),
                 ),
               ],

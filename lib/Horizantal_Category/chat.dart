@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_donation/Horizantal_Category/Chat_bot.dart';
 import 'package:food_donation/Horizantal_Category/Chat_watssapp.dart';
-import 'package:food_donation/screen/homepage.dart';
-import 'package:food_donation/screen1/home_screen.dart';
+
+import '../layout/screen_layout.dart';
 
 class ChatOption {
   String title;
@@ -18,14 +18,12 @@ class ChatScreen extends StatelessWidget {
     ChatOption(
       title: "Bot",
       subtitle: "Chat with Bot",
-      imageUrl:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuvHjWqFdb-58g00FVMcY_pQxLYro-sUS9EL7xJYQ&s",
+      imageUrl: "images/bot.png",
     ),
     ChatOption(
       title: "WhatsApp",
       subtitle: "Chat with WhatsApp",
-      imageUrl:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcWAF0mh6d9M2JSUPp1j-rDPyY09nuMalf5KbKC6_iLw&ec=48665701",
+      imageUrl: "images/watssapp.png",
     ),
   ];
 
@@ -39,7 +37,7 @@ class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: AppBar(
         flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -51,25 +49,29 @@ class ChatScreen extends StatelessWidget {
           ],
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 172, 226, 241),
-              Color.fromARGB(255, 18, 160, 248),
-              Color.fromARGB(217, 56, 48, 209),
+              Color(0xffFFB200),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
+              // Colors.white,
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
           ),
         )),
-        title: const Text("Chat Us"),
+        title: const Text(
+          "Chat Us",
+          style: TextStyle(color: Colors.black),
+        ),
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
             size: 24,
           ),
           onPressed: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (ctx) => const HomeScreen(),
+                builder: (ctx) => const ScreenLayout(),
               ),
             );
           },
@@ -82,7 +84,10 @@ class ChatScreen extends StatelessWidget {
             children: [
               const Text(
                 "Select Chat Option",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 32),
               GestureDetector(
@@ -97,6 +102,7 @@ class ChatScreen extends StatelessWidget {
                   );
                 },
                 child: Card(
+                  color: const Color(0xffFFFAE7),
                   elevation: 4,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
@@ -108,7 +114,7 @@ class ChatScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.network(
+                        Image.asset(
                           chatOptions[0].imageUrl,
                           height: 64,
                           width: 64,
@@ -145,6 +151,7 @@ class ChatScreen extends StatelessWidget {
                 },
                 child: Card(
                   elevation: 4,
+                  color: const Color(0xffFFFAE7),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
@@ -155,7 +162,7 @@ class ChatScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.network(
+                        Image.asset(
                           chatOptions[1].imageUrl,
                           height: 64,
                           width: 64,

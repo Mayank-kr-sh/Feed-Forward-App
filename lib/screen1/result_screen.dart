@@ -15,7 +15,7 @@ class ResultsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: SearchBarWidget(
         isReadOnly: false,
         hasBackButton: true,
@@ -48,28 +48,6 @@ class ResultsScreen extends StatelessWidget {
               ),
             ),
           ),
-          // Expanded(
-          //   child: GridView.builder(
-          //       itemCount: 9,
-          //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          //           crossAxisCount: 3, childAspectRatio: 2 / 4),
-          //       itemBuilder: (context, index) {
-          //         return ResultsWidget(
-          //           product: ProductModel(
-          //             url:
-          //                 "https://m.media-amazon.com/images/I/11iTpTDy6TL._SS70_.png",
-          //             productName: "Company Logo",
-          //             cost: 100,
-          //             discount: 10,
-          //             uid: "mayank",
-          //             sellerName: "food",
-          //             sellerUid: "123",
-          //             rating: 3,
-          //             noOfRating: 8,
-          //           ),
-          //         );
-          //       }),
-          // )
           Expanded(
               child: FutureBuilder(
                   future: FirebaseFirestore.instance

@@ -19,8 +19,9 @@ class AccountScreenAppBar extends StatelessWidget with PreferredSizeWidget {
       decoration: const BoxDecoration(
           gradient: LinearGradient(
         colors: [
-          Color.fromARGB(255, 64, 202, 226),
-          Colors.blue,
+          Color(0xffFFB200),
+          // Color(0xffFEB139),
+          Color(0xffFFDE00),
         ],
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,

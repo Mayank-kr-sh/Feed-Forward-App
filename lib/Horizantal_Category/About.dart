@@ -7,6 +7,8 @@ import 'package:food_donation/screen/Team_Members/milind.dart';
 import 'package:food_donation/screen/Team_Members/tanush.dart';
 import 'package:food_donation/screen1/home_screen.dart';
 
+import '../layout/screen_layout.dart';
+
 class About extends StatefulWidget {
   const About({super.key});
 
@@ -121,7 +123,7 @@ class _AboutState extends State<About> {
     return Container(
       height: 120,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 222, 216, 198),
+        color: const Color(0xffFFFAE7),
         borderRadius: BorderRadius.circular(20),
         boxShadow: const [
           BoxShadow(
@@ -137,7 +139,8 @@ class _AboutState extends State<About> {
         children: [
           const CircleAvatar(
             maxRadius: 40,
-            backgroundImage: AssetImage("images/logo1.jpg"),
+            backgroundColor: Colors.transparent,
+            backgroundImage: AssetImage("images/man.png"),
           ),
           SizedBox(
             height: 80,
@@ -210,7 +213,7 @@ class _AboutState extends State<About> {
     return Container(
       height: 250,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 222, 216, 198),
+        color: const Color(0xffFFFAE7),
         borderRadius: BorderRadius.circular(20),
         boxShadow: const [
           BoxShadow(
@@ -228,29 +231,12 @@ class _AboutState extends State<About> {
   Widget _topSection() {
     return Container(
       width: double.infinity,
-      height: 200,
-      padding: const EdgeInsets.all(20.0),
+      height: 350,
+      padding: const EdgeInsets.symmetric(vertical: 20.0),
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('images/logo1.jpg'),
-        ),
-        gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 100, 220, 242),
-            Color.fromARGB(255, 33, 82, 243),
-          ],
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(120, 0, 0, 0),
-            blurRadius: 25,
-          ),
-        ],
-        borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(200),
-          bottomLeft: Radius.circular(200),
+          image: AssetImage('images/logo2.png'),
+          fit: BoxFit.fill,
         ),
       ),
     );
@@ -259,7 +245,7 @@ class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: AppBar(
         flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -271,9 +257,9 @@ class _AboutState extends State<About> {
           ],
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 172, 226, 241),
-              Color.fromARGB(255, 18, 160, 248),
-              Color.fromARGB(217, 56, 48, 209),
+              Color(0xffFFB200),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -281,14 +267,14 @@ class _AboutState extends State<About> {
         )),
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
             size: 28,
           ),
           onPressed: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (ctx) => const HomeScreen(),
+                builder: (ctx) => const ScreenLayout(),
               ),
             );
           },
@@ -297,17 +283,18 @@ class _AboutState extends State<About> {
           "About",
           style: TextStyle(
             fontSize: 24,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            _topSection(),
-            const SizedBox(height: 100),
-            _dynamicAbout(),
             const SizedBox(height: 20),
+            _topSection(),
+            const SizedBox(height: 50),
+            _dynamicAbout(),
+            const SizedBox(height: 30),
             _midLine(),
             const SizedBox(height: 20),
             _teamMember(

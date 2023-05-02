@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_donation/layout/screen_layout.dart';
 import 'dart:math';
-
-import 'package:food_donation/screen1/home_screen.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({super.key});
@@ -33,7 +32,7 @@ class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: AppBar(
         flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -45,9 +44,9 @@ class _NotificationPageState extends State<NotificationPage> {
           ],
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 172, 226, 241),
-              Color.fromARGB(255, 18, 160, 248),
-              Color.fromARGB(217, 56, 48, 209),
+              Color(0xffFFB200),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -55,19 +54,22 @@ class _NotificationPageState extends State<NotificationPage> {
         )),
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
             size: 28,
           ),
           onPressed: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (ctx) => const HomeScreen(),
+                builder: (ctx) => const ScreenLayout(),
               ),
             );
           },
         ),
-        title: const Text('Notifications'),
+        title: const Text(
+          'Notifications',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: ListView.builder(
         itemCount: notifications.length,
@@ -81,8 +83,8 @@ class _NotificationPageState extends State<NotificationPage> {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Icon(
+                children: const [
+                  Icon(
                     Icons.delete,
                     color: Colors.white,
                   ),

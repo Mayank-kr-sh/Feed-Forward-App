@@ -24,42 +24,49 @@ class ProductInformationWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              productName,
-              maxLines: 2,
-              style: const TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 16,
-                letterSpacing: 0.9,
-                overflow: TextOverflow.ellipsis,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 30),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                productName,
+                maxLines: 2,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  letterSpacing: 0.9,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ),
           ),
-          spaceThingy,
+          //spaceThingy,
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 7),
+              padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 30),
               child: CostWidget(color: Colors.black, cost: cost),
             ),
           ),
-          spaceThingy,
+          //spaceThingy,
           Align(
             alignment: Alignment.centerLeft,
-            child: RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: "Sold by ",
-                    style: TextStyle(color: Colors.grey[700], fontSize: 14),
-                  ),
-                  TextSpan(
-                    text: sellerName,
-                    style: const TextStyle(color: Colors.blue, fontSize: 14),
-                  ),
-                ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 30),
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Sold by ",
+                      style: TextStyle(color: Colors.grey[700], fontSize: 14),
+                    ),
+                    TextSpan(
+                      text: sellerName,
+                      style: const TextStyle(
+                          color: Color(0xff277BC0), fontSize: 14),
+                    ),
+                  ],
+                ),
               ),
             ),
           )

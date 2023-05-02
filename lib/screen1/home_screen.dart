@@ -12,6 +12,8 @@ import 'package:food_donation/screen/Widgets/searchbar.dart';
 import 'package:food_donation/screen/Widgets/user_detail.dart';
 import 'package:food_donation/screen1/sign_in.dart';
 
+import '../layout/screen_layout.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -62,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _openDrawer() {
     return Drawer(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       child: ListView(
         children: [
           DrawerHeader(
@@ -75,9 +77,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
               gradient: LinearGradient(
                 colors: [
-                  Color.fromARGB(217, 56, 48, 209),
-                  Color.fromARGB(255, 18, 160, 248),
-                  Color.fromARGB(255, 172, 226, 241),
+                  Color(0xffFFB200),
+                  Color(0xffFEB139),
+                  Color(0xffFFDE00),
                 ],
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
@@ -91,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: CircleAvatar(
                     backgroundColor: Colors.white54,
                     radius: 40,
-                    backgroundImage: AssetImage("images/logo1.jpg"),
+                    backgroundImage: AssetImage("images/man.png"),
                   ),
                 ),
                 const SizedBox(width: 20),
@@ -143,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (ctx) => const HomeScreen(),
+                  builder: (ctx) => const ScreenLayout(),
                 ),
               );
             },
@@ -402,7 +404,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       drawer: _openDrawer(),
       appBar: SearchBarWidget(
         isReadOnly: true,

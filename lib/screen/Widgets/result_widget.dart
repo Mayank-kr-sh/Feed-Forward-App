@@ -58,7 +58,7 @@ class ResultsWidget extends StatelessWidget {
                       child: Text(
                         product.noOfRating.toString(),
                         style: const TextStyle(
-                          color: Colors.cyan,
+                          color: Color(0xff277BC0),
                         ),
                       ),
                     )
@@ -69,7 +69,7 @@ class ResultsWidget extends StatelessWidget {
                 height: 20,
                 child: FittedBox(
                   child: CostWidget(
-                    color: Color.fromARGB(255, 214, 35, 22),
+                    color: const Color.fromARGB(255, 214, 35, 22),
                     cost: product.cost,
                   ),
                 ),

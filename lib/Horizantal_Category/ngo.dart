@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../layout/screen_layout.dart';
+
 class NGO extends StatefulWidget {
   const NGO({super.key});
 
@@ -32,7 +34,7 @@ class _NGOState extends State<NGO> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: AppBar(
         flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -44,15 +46,32 @@ class _NGOState extends State<NGO> {
           ],
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 172, 226, 241),
-              Color.fromARGB(255, 18, 160, 248),
-              Color.fromARGB(217, 56, 48, 209),
+              Color(0xffFFB200),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
           ),
         )),
-        title: const Text("List of NGO's"),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
+            size: 28,
+          ),
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (ctx) => const ScreenLayout(),
+              ),
+            );
+          },
+        ),
+        title: const Text(
+          "List of NGO's",
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -74,7 +93,7 @@ class _NGOState extends State<NGO> {
                 itemCount: ngos.length,
                 itemBuilder: (context, index) {
                   return Card(
-                    color: const Color.fromARGB(255, 222, 216, 198),
+                    color: const Color(0xffFFFAE7),
                     elevation: 4.0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),

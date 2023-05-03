@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_donation/Horizantal_Category/Chat_bot.dart';
 import 'package:food_donation/Horizantal_Category/Chat_watssapp.dart';
-import 'package:food_donation/screen/homepage.dart';
-import 'package:food_donation/screen1/home_screen.dart';
+import 'package:food_donation/layout/screen_layout.dart';
 
 class ChatOption {
   String title;
@@ -69,7 +68,7 @@ class ChatScreen extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (ctx) => const HomeScreen(),
+                builder: (ctx) => const ScreenLayout(),
               ),
             );
           },
@@ -102,7 +101,7 @@ class ChatScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Container(
-                    height: 160,
+                    height: 180,
                     width: 300,
                     padding: const EdgeInsets.all(16),
                     child: Column(
@@ -149,7 +148,7 @@ class ChatScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Container(
-                    height: 160,
+                    height: 180,
                     width: 300,
                     padding: const EdgeInsets.all(16),
                     child: Column(

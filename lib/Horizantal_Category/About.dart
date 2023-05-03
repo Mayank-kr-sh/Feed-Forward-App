@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:food_donation/layout/screen_layout.dart';
 import 'package:food_donation/screen/Team_Members/kashish.dart';
 import 'package:food_donation/screen/Team_Members/mayank.dart';
 import 'package:food_donation/screen/Team_Members/milind.dart';
@@ -288,7 +289,7 @@ class _AboutState extends State<About> {
           onPressed: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (ctx) => const HomeScreen(),
+                builder: (ctx) => const ScreenLayout(),
               ),
             );
           },

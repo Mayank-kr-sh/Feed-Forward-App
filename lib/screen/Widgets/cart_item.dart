@@ -208,7 +208,7 @@ class CartItemWidget extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Padding(
-              padding: const EdgeInsets.only(top: 5),
+              padding: const EdgeInsets.only(top: 2),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [

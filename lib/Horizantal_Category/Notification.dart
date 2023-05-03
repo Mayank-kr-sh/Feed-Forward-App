@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_donation/layout/screen_layout.dart';
 import 'dart:math';
 
 import 'package:food_donation/screen1/home_screen.dart';
@@ -62,7 +63,7 @@ class _NotificationPageState extends State<NotificationPage> {
           onPressed: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (ctx) => const HomeScreen(),
+                builder: (ctx) => const ScreenLayout(),
               ),
             );
           },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_donation/Horizantal_Category/chat.dart';
-import 'package:food_donation/screen1/home_screen.dart';
+import 'package:food_donation/layout/screen_layout.dart';
 import 'package:food_donation/screen1/sell_screen.dart';
 
 class Restaurants extends StatelessWidget {
@@ -38,7 +38,7 @@ class Restaurants extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (ctx) => const HomeScreen(),
+                builder: (ctx) => const ScreenLayout(),
               ),
             );
           },

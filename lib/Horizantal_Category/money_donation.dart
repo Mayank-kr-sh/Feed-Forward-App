@@ -2,6 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:food_donation/layout/screen_layout.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
@@ -158,6 +159,20 @@ class _PaymentState extends State<Payment> with SingleTickerProviderStateMixin {
             end: Alignment.bottomLeft,
           ),
         )),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+            size: 24,
+          ),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (ctx) => const ScreenLayout(),
+              ),
+            );
+          },
+        ),
         title: const Text('Donation Page'),
       ),
       body: SingleChildScrollView(

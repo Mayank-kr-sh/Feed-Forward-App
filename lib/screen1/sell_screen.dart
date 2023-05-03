@@ -51,8 +51,7 @@ class _SellScreenState extends State<SellScreen> {
                   child: Center(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         const Padding(padding: EdgeInsets.only(top: 8)),
                         Container(
@@ -118,25 +117,26 @@ class _SellScreenState extends State<SellScreen> {
                                     controller: nameController,
                                     obscureText: false,
                                     hintText: "Enter the name of the item"),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 TextFieldWidget(
                                     title: "Location",
                                     controller: mssgController,
                                     obscureText: false,
                                     hintText: "Enter Location to Pick Up Food"),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 TextFieldWidget(
                                     title: "Quality Review",
                                     controller: locationController,
                                     obscureText: false,
                                     hintText: "Rate the quality of food"),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 const Text(
                                   "Category Of Foods",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 17),
                                 ),
+                                const SizedBox(height: 6),
                                 ListTile(
                                   title: const Text("Other Food"),
                                   leading: Radio(

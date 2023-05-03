@@ -4,6 +4,7 @@ import 'package:food_donation/Horizantal_Category/chat.dart';
 import 'package:food_donation/Horizantal_Category/money_donation.dart';
 import 'package:food_donation/Horizantal_Category/ngo.dart';
 import 'package:food_donation/Horizantal_Category/profile.dart';
+import 'package:food_donation/layout/screen_layout.dart';
 import 'package:food_donation/screen/Widgets/simple_product.dart';
 import 'package:food_donation/screen1/account_screen.dart';
 import 'package:food_donation/screen1/cart_screen.dart';
@@ -139,7 +140,7 @@ List<Widget> testChildren = [
 ];
 
 List<Widget> productsList = [
-  const HomeScreen(),
+  const ScreenLayout(),
   const SellScreen(),
   const Payment(),
   ChatScreen(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_donation/layout/screen_layout.dart';
 
 class NGO extends StatefulWidget {
   const NGO({super.key});
@@ -52,6 +53,20 @@ class _NGOState extends State<NGO> {
             end: Alignment.bottomLeft,
           ),
         )),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+            size: 28,
+          ),
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (ctx) => const ScreenLayout(),
+              ),
+            );
+          },
+        ),
         title: const Text("List of NGO's"),
       ),
       body: SingleChildScrollView(

@@ -77,6 +77,8 @@ import 'package:food_donation/layout/screen_layout.dart';
 import 'package:food_donation/screen1/home_screen.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../layout/screen_layout.dart';
+
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
 
@@ -147,9 +149,9 @@ class _MapScreenState extends State<MapScreen> {
           ],
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 172, 226, 241),
-              Color.fromARGB(255, 18, 160, 248),
-              Color.fromARGB(217, 56, 48, 209),
+              Color(0xffFFB200),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -157,8 +159,8 @@ class _MapScreenState extends State<MapScreen> {
         )),
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
             size: 24,
           ),
           onPressed: () {
@@ -169,7 +171,10 @@ class _MapScreenState extends State<MapScreen> {
             );
           },
         ),
-        title: const Text('Google Map Example'),
+        title: const Text(
+          'Google Map Example',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: GoogleMap(
         onMapCreated: (GoogleMapController controller) {

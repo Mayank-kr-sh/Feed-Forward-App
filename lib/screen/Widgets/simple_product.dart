@@ -23,7 +23,7 @@ class SimpleProductWidget extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1 / 1,
         child: Container(
-          color: Colors.white,
+          color: const Color(0xffFFFAE7),
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Image.network(productModel.url),

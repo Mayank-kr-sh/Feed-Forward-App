@@ -2,6 +2,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+
+import 'package:food_donation/Horizantal_Category/chat.dart';
+
 import 'package:food_donation/layout/screen_layout.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
@@ -139,7 +142,7 @@ class _PaymentState extends State<Payment> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: AppBar(
         flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -151,9 +154,9 @@ class _PaymentState extends State<Payment> with SingleTickerProviderStateMixin {
           ],
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 172, 226, 241),
-              Color.fromARGB(255, 18, 160, 248),
-              Color.fromARGB(217, 56, 48, 209),
+              Color(0xffFFB200),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -173,7 +176,10 @@ class _PaymentState extends State<Payment> with SingleTickerProviderStateMixin {
             );
           },
         ),
-        title: const Text('Donation Page'),
+        title: const Text(
+          'Donation Page',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),

@@ -12,7 +12,7 @@ class ProductsShowcaseListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    ;
+
     double height = screenSize.height / 4;
     double titleHeight = 25;
     return Container(
@@ -20,7 +20,7 @@ class ProductsShowcaseListView extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       height: height,
       width: screenSize.width,
-      color: Colors.white,
+      color: const Color(0xffFFFAE7),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -28,6 +28,7 @@ class ProductsShowcaseListView extends StatelessWidget {
           SizedBox(
             height: titleHeight,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   title,
@@ -37,10 +38,10 @@ class ProductsShowcaseListView extends StatelessWidget {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 14),
+                  padding: EdgeInsets.only(right: 20),
                   child: Text(
                     "Show more",
-                    style: TextStyle(color: Colors.lightBlue),
+                    style: TextStyle(color: Color(0xff277BC0)),
                   ),
                 )
               ],

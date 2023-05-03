@@ -3,13 +3,15 @@ import 'package:food_donation/Horizantal_Category/chat.dart';
 import 'package:food_donation/layout/screen_layout.dart';
 import 'package:food_donation/screen1/sell_screen.dart';
 
+import '../layout/screen_layout.dart';
+
 class PublicEvents extends StatelessWidget {
   const PublicEvents({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: AppBar(
         flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -21,9 +23,9 @@ class PublicEvents extends StatelessWidget {
           ],
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 172, 226, 241),
-              Color.fromARGB(255, 18, 160, 248),
-              Color.fromARGB(217, 56, 48, 209),
+              Color(0xffFFB200),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -31,8 +33,8 @@ class PublicEvents extends StatelessWidget {
         )),
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
+            Icons.arrow_back_ios,
+            color: Colors.black,
             size: 24,
           ),
           onPressed: () {
@@ -43,7 +45,10 @@ class PublicEvents extends StatelessWidget {
             );
           },
         ),
-        title: const Text('Donate Leftover Food'),
+        title: const Text(
+          'Donate Leftover Food',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Center(
         child: Column(

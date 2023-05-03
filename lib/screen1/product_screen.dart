@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:food_donation/provider/user_details_provider.dart';
@@ -34,7 +36,7 @@ class _ProductScreenState extends State<ProductScreen> {
     Size screenSize = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+        backgroundColor: const Color(0xffFFF4CF),
         appBar: SearchBarWidget(
           isReadOnly: true,
           hasBackButton: true,
@@ -62,11 +64,13 @@ class _ProductScreenState extends State<ProductScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.only(bottom: 5),
+                                      padding:
+                                          const EdgeInsets.only(bottom: 10),
                                       child: Text(
                                         widget.productModel.sellerName,
                                         style: const TextStyle(
-                                            color: Colors.cyan, fontSize: 16),
+                                            color: Color(0xff277BC0),
+                                            fontSize: 16),
                                       ),
                                     ),
                                     Text(widget.productModel.productName),
@@ -121,11 +125,11 @@ class _ProductScreenState extends State<ProductScreen> {
                                   productModel: widget.productModel);
                               Utils().showSnackBar(
                                   context: context,
-                                  content: "Redirect to Chat section.");
+                                  content: "Sucessfully Added.");
                             },
                             //onPressed: () {},
                             child: const Text(
-                              "Contact Donors",
+                              "Add to Request List",
                               style: TextStyle(color: Colors.black),
                             ),
                           ),

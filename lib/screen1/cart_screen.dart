@@ -23,7 +23,7 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: SearchBarWidget(
         hasBackButton: false,
         isReadOnly: true,
@@ -37,7 +37,7 @@ class _CartScreenState extends State<CartScreen> {
                   height: 80 / 2,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: StreamBuilder(
                     stream: FirebaseFirestore.instance
                         .collection("users")
@@ -65,6 +65,7 @@ class _CartScreenState extends State<CartScreen> {
                                         context,
                                         listen: false)
                                     .userDetails);
+                            // ignore: use_build_context_synchronously
                             Utils().showSnackBar(
                                 context: context, content: "Done");
                           },
@@ -78,29 +79,6 @@ class _CartScreenState extends State<CartScreen> {
                     },
                   ),
                 ),
-
-                // Expanded(
-                //   child: ListView.builder(
-                //     itemCount: 5,
-                //     itemBuilder: (context, index) {
-                //       return CartItemWidget(
-                //         product: ProductModel(
-                //           url:
-                //               "https://m.media-amazon.com/images/I/11iTpTDy6TL._SS70_.png",
-                //           productName: "Company Logo",
-                //           cost: 100,
-                //           discount: 10,
-                //           uid: "mayank",
-                //           sellerName: "food",
-                //           sellerUid: "123",
-                //           rating: 8,
-                //           noOfRating: 8,
-                //         ),
-                //       );
-                //     },
-                //   ),
-                // ),
-
                 Expanded(
                     child: StreamBuilder(
                   stream: FirebaseFirestore.instance
@@ -126,7 +104,7 @@ class _CartScreenState extends State<CartScreen> {
                 ))
               ],
             ),
-            UserDetailsBar(
+            const UserDetailsBar(
               offset: 0,
             ),
           ],

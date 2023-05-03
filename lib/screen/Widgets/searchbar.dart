@@ -1,9 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_donation/Horizantal_Category/About.dart';
 import 'package:food_donation/Horizantal_Category/Notification.dart';
 import 'package:food_donation/Horizantal_Category/chat.dart';
-import 'package:food_donation/Horizantal_Category/money_donation.dart';
 import 'package:food_donation/Horizantal_Category/profile.dart';
 import 'package:food_donation/screen1/home_screen.dart';
 import 'package:food_donation/screen1/result_screen.dart';
@@ -361,9 +359,9 @@ class SearchBarWidget extends StatelessWidget with PreferredSizeWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(217, 56, 48, 209),
-              Color.fromARGB(255, 18, 160, 248),
-              Color.fromARGB(255, 172, 226, 241),
+              Color(0xffFFB200),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -448,28 +446,28 @@ class SearchBarWidget extends StatelessWidget with PreferredSizeWidget {
               onPressed: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (ctx) => MapScreen(),
+                    builder: (ctx) => const MapScreen(),
                   ),
                 );
               },
               icon: const Icon(
                 Icons.location_on_outlined,
                 size: 28,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             IconButton(
               onPressed: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (ctx) => NotificationPage(),
+                    builder: (ctx) => const NotificationPage(),
                   ),
                 );
               },
               icon: const Icon(
                 Icons.notifications_none_outlined,
                 size: 28,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ],

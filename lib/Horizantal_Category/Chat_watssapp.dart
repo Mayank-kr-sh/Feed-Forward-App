@@ -121,7 +121,7 @@ class _watssappChatState extends State<watssappChat>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: AppBar(
         flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -133,9 +133,9 @@ class _watssappChatState extends State<watssappChat>
           ],
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 172, 226, 241),
-              Color.fromARGB(255, 18, 160, 248),
-              Color.fromARGB(217, 56, 48, 209),
+              Color(0xffFFB200),
+              // Color(0xffFEB139),
+              Color(0xffFFDE00),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -143,8 +143,8 @@ class _watssappChatState extends State<watssappChat>
         )),
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
             size: 24,
           ),
           onPressed: () {
@@ -155,7 +155,10 @@ class _watssappChatState extends State<watssappChat>
             );
           },
         ),
-        title: const Text('WhatsApp Connect'),
+        title: const Text(
+          'WhatsApp Connect',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Center(
         child: Column(

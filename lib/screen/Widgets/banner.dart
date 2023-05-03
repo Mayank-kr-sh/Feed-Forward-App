@@ -143,7 +143,7 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Colors.white,
+                      const Color(0xffFFF4CF),
                       Colors.white.withOpacity(0.000001),
                     ],
                     begin: Alignment.bottomCenter,
@@ -157,7 +157,7 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
         Container(
           height: 150,
           width: screenSize.width,
-          color: Colors.white,
+          color: const Color(0xffFFF4CF),
           // color: Colors.amber,
           child: SingleChildScrollView(
             //itemCount: categoriesList.length,
@@ -170,7 +170,7 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Hotels(),
+                        builder: (context) => const Hotels(),
                       ),
                     );
                   },
@@ -198,7 +198,7 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PublicEvents(),
+                        builder: (context) => const PublicEvents(),
                       ),
                     );
                   },
@@ -221,22 +221,6 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
                     side: smallAdDimension,
                   ),
                 ),
-                // getSmallAdWidget(
-                //   index: 0,
-                //   side: smallAdDimension,
-                // ),
-                // getSmallAdWidget(
-                //   index: 1,
-                //   side: smallAdDimension,
-                // ),
-                // getSmallAdWidget(
-                //   index: 2,
-                //   side: smallAdDimension,
-                // ),
-                // getSmallAdWidget(
-                //   index: 3,
-                //   side: smallAdDimension,
-                // ),
               ],
             ),
           ),
@@ -252,7 +236,7 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
         height: side,
         width: side,
         decoration: ShapeDecoration(
-          color: Colors.white,
+          color: const Color(0xffFFFAE7),
           shadows: [
             BoxShadow(
                 color: Colors.black.withOpacity(0.3),

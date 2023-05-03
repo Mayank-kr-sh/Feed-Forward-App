@@ -25,7 +25,7 @@ class _AccountScreenState extends State<AccountScreen> {
     Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xffFFF4CF),
       appBar: AccountScreenAppBar(),
       body: SingleChildScrollView(
         child: SizedBox(
@@ -97,7 +97,10 @@ class _AccountScreenState extends State<AccountScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Order Requests",
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -126,7 +129,7 @@ class _AccountScreenState extends State<AccountScreen> {
                               style:
                                   const TextStyle(fontWeight: FontWeight.w500),
                             ),
-                            subtitle: Text("Address: ${model.buyersAddress}"),
+                            subtitle: Text("Number: ${model.buyersAddress}"),
                             trailing: IconButton(
                               onPressed: () async {
                                 FirebaseFirestore.instance
@@ -167,8 +170,9 @@ class IntroductionWidgetAccountScreen extends StatelessWidget {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 64, 202, 226),
-            Colors.blue,
+            // Color(0xffFEB139),
+            Color(0xffFFB200),
+            Color(0xffFFDE00),
           ],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
@@ -179,7 +183,7 @@ class IntroductionWidgetAccountScreen extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.white,
+              const Color(0xffFFF4CF),
               Colors.white.withOpacity(0.000000000001),
             ],
             begin: Alignment.bottomCenter,
@@ -217,9 +221,9 @@ class IntroductionWidgetAccountScreen extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(right: 20),
               child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  "https://m.media-amazon.com/images/I/116KbsvwCRL._SX90_SY90_.png",
-                ),
+                maxRadius: 30,
+                backgroundColor: Colors.transparent,
+                backgroundImage: AssetImage("images/man.png"),
               ),
             )
           ],

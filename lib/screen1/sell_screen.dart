@@ -39,7 +39,7 @@ class _SellScreenState extends State<SellScreen> {
     Size screenSize = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 241, 229),
+      backgroundColor: const Color(0xffFFF4CF),
       body: !isLoading
           ? SingleChildScrollView(
               child: SizedBox(
@@ -61,8 +61,8 @@ class _SellScreenState extends State<SellScreen> {
                               image == null
                                   ? CircleAvatar(
                                       radius: 55,
-                                      backgroundColor:
-                                          Color.fromARGB(54, 158, 158, 158),
+                                      backgroundColor: const Color.fromARGB(
+                                          54, 158, 158, 158),
                                       child: Image.asset(
                                         "images/upload.png",
                                         height: screenSize.height / 2,

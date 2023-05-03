@@ -45,56 +45,34 @@ By leveraging the potential of technology and community-driven efforts, Feed For
 <div style="display: flex; flex-direction: row;">
 <img src = "https://user-images.githubusercontent.com/107645749/235868184-4e292a73-d345-463d-8d2c-f40a6c19a13d.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235868176-cd5d527e-4cbf-4d92-b762-a43a88fdf7a8.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235867815-0b558f0d-c620-4dd5-b17c-bb92761e0548.jpg" width="280" height="600">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div style="display: flex; flex-direction: row;">
 <img src = "https://user-images.githubusercontent.com/107645749/235867968-a79c05d3-305c-4e01-97f2-cee5e47f80ec.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <img src = "https://user-images.githubusercontent.com/107645749/235867912-74881ac0-9ceb-4ad3-808e-d244844bcc35.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235867941-91326794-c651-4296-8430-538c255fbc51.jpg" width="280" height="600"> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div style="display: flex; flex-direction: row;">
 <img src = "https://user-images.githubusercontent.com/107645749/235868088-4f619018-93bd-42e3-b70b-e9052a9c7886.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235868131-3d28b73f-2d41-415c-b1f0-2bdbb17ef45a.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235868073-c2d2b720-87bd-45c9-9021-515397ba1eb1.jpg" width="280" height="600">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div style="display: flex; flex-direction: row;">
 <img src = "https://user-images.githubusercontent.com/107645749/235868079-003e4634-9e9b-4340-b603-8d7b9def4ffd.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235868057-4e1fdb04-c60b-4c9e-a3bf-9f17319cebf6.jpg" width="280" height="600">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235868066-0f8b555f-e4f7-492c-95a9-4f2c28c3ed65.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -103,60 +81,36 @@ By leveraging the potential of technology and community-driven efforts, Feed For
 <div style="display: flex; flex-direction: row;">
 <img src = "https://user-images.githubusercontent.com/107645749/235868199-613d391d-ecef-4bad-bf78-20afbf49ed9f.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235868040-6cd2ebb1-e806-496e-ad23-44b0eb2153d4.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235868020-ed0dc2c2-de5d-4305-9bd6-13f03c7f5c15.jpg" width="280" height="600">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div style="display: flex; flex-direction: row;">
 <img src = "https://user-images.githubusercontent.com/107645749/235868012-3097eda8-de36-4437-bb3d-9b2fe915582a.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235867984-a4a5b269-678c-4f48-be30-6a5a5bc42fdd.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235867991-e5be921a-2bc3-47da-8839-4038906793bf.jpg" width="280" height="600">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div style="display: flex; flex-direction: row;">
 <img src = "https://user-images.githubusercontent.com/107645749/235868210-eb8480fb-ad6f-40e9-983a-95d62529b6f7.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235867949-0422da8e-5b6e-4199-bd1f-37876a0ad226.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235867927-6c209548-466c-4829-a2eb-88c97fbd8791.jpg" width="280" height="600">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div style="display: flex; flex-direction: row;">
 <img src = "https://user-images.githubusercontent.com/107645749/235867976-9f310065-d87e-4e71-a819-15583c19963a.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235867908-6538da47-9ecb-4aaa-b53a-db797de7b4fc.jpg" width="280" height="600">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://user-images.githubusercontent.com/107645749/235868191-d990ccbe-30f5-43c6-8a2e-9ce8ece59351.jpg" width="280" height="600">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

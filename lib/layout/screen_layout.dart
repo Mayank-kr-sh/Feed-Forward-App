@@ -85,7 +85,8 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                 ),
                 Tab(
                   child: Icon(
-                    Icons.shopping_cart_outlined,
+                    // Icons.shopping_cart_outlined,
+                    Icons.shopping_cart_checkout_sharp,
                     color: currentPage == 2
                         ? const Color(0xffFFB200)
                         : Colors.black,

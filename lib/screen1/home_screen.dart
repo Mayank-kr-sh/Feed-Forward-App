@@ -10,6 +10,7 @@ import 'package:food_donation/screen/Widgets/loading.dart';
 import 'package:food_donation/screen/Widgets/product.dart';
 import 'package:food_donation/screen/Widgets/searchbar.dart';
 import 'package:food_donation/screen/Widgets/user_detail.dart';
+import 'package:food_donation/screen1/helpCenter.dart';
 import 'package:food_donation/screen1/sign_in.dart';
 
 import '../layout/screen_layout.dart';
@@ -269,11 +270,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           ListTile(
             onTap: () {
-              // Navigator.of(context).pushReplacement(
-              //   MaterialPageRoute(
-              //     builder: (ctx) => const Contact(),
-              //   ),
-              // );
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (ctx) => const helpcenter(),
+                ),
+              );
             },
             leading: const Icon(
               Icons.format_quote_outlined,

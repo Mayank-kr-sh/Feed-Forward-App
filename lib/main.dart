@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:food_donation/layout/screen_layout.dart';
 import 'package:food_donation/provider/user_details_provider.dart';
 import 'package:food_donation/screen1/sign_in.dart';
+import 'package:food_donation/screen1/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -31,17 +32,18 @@ class MyApp extends StatelessWidget {
           builder: (context, AsyncSnapshot<User?> user) {
             if (user.connectionState == ConnectionState.waiting) {
               return const Center(
-                child: CircularProgressIndicator(
+                child: CircularProgressIndicator(  
                   color: Colors.orange,
                 ),
               );
             } else if (user.hasData) {
               return const ScreenLayout();
             } else {
-              return const SignInScreen();
+              return const SplashScreen();
             }
           },
         ),
+        //home: const SplashScreen(),
       ),
     );
   }

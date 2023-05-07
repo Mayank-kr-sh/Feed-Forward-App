@@ -55,9 +55,11 @@ class _AccountScreenState extends State<AccountScreen> {
                   isLoading: false,
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SellScreen()));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SellScreen(),
+                      ),
+                    );
                   },
                   child: const Text(
                     "Sell",

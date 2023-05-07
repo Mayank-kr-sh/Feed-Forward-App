@@ -15,12 +15,12 @@ class AdBannerWidget extends StatefulWidget {
 
 class _AdBannerWidgetState extends State<AdBannerWidget> {
   List imageList = [
-    {"id": 1, "image_path": 'images/logo.jpg'},
-    {"id": 2, "image_path": 'images/Banner1.jpg'},
-    {"id": 3, "image_path": 'images/Banner2.webp'},
-    {"id": 4, "image_path": 'images/Banner3.jpg'},
-    {"id": 5, "image_path": 'images/Banner4.webp'},
-    {"id": 6, "image_path": 'images/Banner5.jpg'},
+    {"id": 1, "image_path": 'images/Poster1.png'},
+    {"id": 2, "image_path": 'images/Poster2.png'},
+    {"id": 3, "image_path": 'images/Poster3.png'},
+    {"id": 4, "image_path": 'images/Poster4.png'},
+    {"id": 5, "image_path": 'images/Poster5.png'},
+    {"id": 6, "image_path": 'images/Poster6.png'},
   ];
   final CarouselController carouselController = CarouselController();
 
@@ -124,7 +124,7 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
                 carouselController: carouselController,
                 options: CarouselOptions(
                   scrollPhysics: const BouncingScrollPhysics(),
-                  autoPlay: false,
+                  autoPlay: true,
                   aspectRatio: 2,
                   viewportFraction: 1,
                   onPageChanged: (index, reason) {

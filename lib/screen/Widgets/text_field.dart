@@ -78,18 +78,12 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
             controller: widget.controller,
             maxLines: 1,
             decoration: InputDecoration(
-              fillColor: Colors.white,
+              fillColor: const Color(0xffFFFAE7),
               filled: true,
               hintText: widget.hintText,
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide.none),
-              // focusedBorder: const OutlineInputBorder(
-              //   borderSide: BorderSide(
-              //     color: Color.fromARGB(255, 81, 0, 255),
-              //     width: 1,
-              //   ),
-              // ),
             ),
           ),
         )

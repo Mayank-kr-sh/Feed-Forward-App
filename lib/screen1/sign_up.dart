@@ -1,4 +1,3 @@
-// import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:food_donation/resourses/authenticatuon.dart';
 import 'package:food_donation/screen/Widgets/custom_main.dart';
@@ -34,17 +33,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      //backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
           decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/second.png'),
+              fit: BoxFit.cover,
+            ),
             gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               colors: [
-                Color.fromARGB(255, 64, 202, 226),
-                Colors.blue,
+                Color(0xffFFB200),
+                Color(0xffFEB139),
+                Color(0xffFFDE00),
               ],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
             ),
           ),
           child: SizedBox(
@@ -57,46 +60,45 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      "images/logo2.png",
-                      height: screenSize.height * 0.22,
-                    ),
                     SizedBox(
                       height: screenSize.height / 1.5,
                       child: FittedBox(
                         child: Container(
-                          height: screenSize.height / 1.2,
+                          height: screenSize.height / 1.4,
                           width: screenSize.width,
-                          padding: const EdgeInsets.all(25),
-                          decoration: BoxDecoration(
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Color.fromARGB(120, 0, 0, 0),
-                                  blurRadius: 20,
-                                ),
-                              ],
-                              gradient: const LinearGradient(
-                                colors: [
-                                  Color.fromARGB(217, 56, 48, 209),
-                                  Color.fromARGB(255, 18, 160, 248),
-                                  Color.fromARGB(255, 172, 226, 241),
-                                ],
-                                begin: Alignment.topRight,
-                                end: Alignment.bottomLeft,
-                              ),
-                              borderRadius: BorderRadius.circular(50)),
+                          padding: const EdgeInsets.all(18),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(
-                                "Sign-Up",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 33,
-                                  color: Colors.white,
-                                ),
+                              Row(
+                                children: [
+                                  IconButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return const SignInScreen();
+                                          },
+                                        ),
+                                      );
+                                    },
+                                    icon: const Icon(
+                                      Icons.arrow_back_ios,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  const Text(
+                                    "Hello Donor",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 33,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
                               ),
                               TextFieldWidget(
                                 title: "Name",
@@ -125,7 +127,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Align(
                                 alignment: Alignment.center,
                                 child: CustomMainButton(
-                                  color: Color.fromARGB(255, 246, 193, 79),
+                                  color:
+                                      const Color.fromARGB(255, 246, 193, 79),
                                   isLoading: isLoading,
                                   onPressed: () async {
                                     setState(() {
@@ -141,6 +144,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       isLoading = false;
                                     });
                                     if (output == "success") {
+                                      // ignore: use_build_context_synchronously
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
@@ -149,6 +153,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       );
                                     } else {
                                       //error
+                                      // ignore: use_build_context_synchronously
                                       Utils().showSnackBar(
                                         context: context,
                                         content: output,

@@ -35,7 +35,7 @@ class CostWidget extends StatelessWidget {
           ),
         ),
         Text(
-          (cost - cost.truncate()).toString(),
+          (cost - cost.truncate()).toStringAsFixed(2),
           style: TextStyle(
             fontSize: 10,
             color: color,

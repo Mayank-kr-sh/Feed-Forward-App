@@ -75,7 +75,7 @@ class _SecondScreenState extends State<SecondScreen> {
                             Image(
                               image: AssetImage('images/icon.png'),
                               width: 100,
-                              height: 100,
+                              height: 90,
                             )
                           ],
                         ),

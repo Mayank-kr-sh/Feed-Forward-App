@@ -20,7 +20,7 @@ class CostWidget extends StatelessWidget {
           "₹",
           style: TextStyle(
             color: color,
-            fontSize: 10,
+            fontSize: 16,
             fontFeatures: const [
               FontFeature.superscripts(),
             ],

@@ -177,7 +177,13 @@ If you have any feedback, please reach out to us @ zerohunger.mtmk@gmail.com
 
 
 ## Contributers
-
+### Major Mobile App
 - [@Mayank-kr-sh](https://github.com/Mayank-kr-sh)
 - [@milind64](https://github.com/milind64)
+
+### Major Website
+- [@tanush2508](https://github.com/tanush2508)
+- [@kashishca](https://github.com/Kashishca)
+
+
 
